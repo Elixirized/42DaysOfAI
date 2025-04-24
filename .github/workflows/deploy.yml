@@ -1,18 +1,27 @@
 name: 🚀 Deploy Astro to GitHub Pages
 
+# 1. Make sure the Actions runner has write permission
+permissions:
+  contents: write
+
 on:
   push:
     branches:
-      - main    # or whatever branch you use
+      - main    # update if your default branch is 'master' or something else
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # 2. Checkout *with* full history and *without* persisting the default GITHUB_TOKEN creds
       - name: Checkout your code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0               # full history, needed for gh-pages
+          persist-credentials: false   # so that we can set up our own deploy creds
 
+      # 3. Set up Node.js and install
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -24,8 +33,18 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
+      # 4. Configure Git user for the deploy commit
+      - name: Setup Git identity
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      # 5. Deploy to gh-pages branch
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist      # Astro’s default output
+          publish_dir: ./dist
+          # explicitly supply the identity here too (optional but recommended)
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
