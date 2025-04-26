@@ -45,7 +45,7 @@ body {
 	background-size: 100% 600px; */
 	
 	background-image: 
-		linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+		linear-gradient(rgba(255,255,255,0.80), rgba(255,255,255,0.80)),
 		url("/images/AI Background MMaitoza.png");
   background-size: cover;
   background-position: center;
