@@ -38,7 +38,11 @@ const posts = raw
 				padding: 0;
 			}
 			ul li {
-				width: calc(50% - 1rem);
+				width: calc(70% - 1rem);
+				text-align: center;
+				width: 100%;
+				/* margin-bottom: 0.25rem; */
+
 			}
 			ul li * {
 				text-decoration: none;
@@ -46,15 +50,14 @@ const posts = raw
 			}
 			ul li:first-child {
 				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
+				/* margin-bottom: 1rem; */
 			}
 			ul li:first-child img {
 				width: 100%;
 			}
-			ul li:first-child .title {
+			/* ul li:first-child .title {
 				font-size: 1.5rem;
-			}
+			} */
 			ul li img {
 				margin-bottom: 0.5rem;
 				border-radius: 12px;
@@ -66,6 +69,8 @@ const posts = raw
 				margin: 0;
 				color: rgb(var(--black));
 				line-height: 1;
+				font-size: 1.5rem;
+
 			}
 			.date {
 				display: block;
@@ -80,9 +85,9 @@ const posts = raw
 				margin: 0;
 				color: rgb(var(--gray));
 			}
-			ul li a:hover h4,
+			ul li a:hover h6,
 			ul li a:hover .date {
-				color: rgb(var(--accent));
+				color: rgb(0, 128, 58);
 			}
 			ul a:hover img {
 				box-shadow: var(--box-shadow);

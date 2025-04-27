@@ -122,6 +122,8 @@ p {
 
 .description {
 	font-size: 1.0em;
+	line-height: 1.33em;
+	text-align: left;
 }
 
 p code {
