@@ -6,9 +6,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const raw = await getCollection('days');
+
+const posts = raw
+  .map((post) => {
+    // post.id is something like "your-file-name.mdx" or "another-post.md"
+    const slug = post.id.replace(/\.(mdx|md)$/, '');
+    return { ...post, slug };
+  })
+  .sort((a, b) => {
+    const aMs = a.data.pubDate?.valueOf() ?? 0;
+    const bMs = b.data.pubDate?.valueOf() ?? 0;
+    return bMs - aMs;
+  });
 ---
 
 <!doctype html>
@@ -17,7 +27,7 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				width: 60%;
 			}
 			ul {
 				display: flex;
@@ -43,7 +53,7 @@ const posts = (await getCollection('blog')).sort(
 				width: 100%;
 			}
 			ul li:first-child .title {
-				font-size: 2.369rem;
+				font-size: 1.5rem;
 			}
 			ul li img {
 				margin-bottom: 0.5rem;
@@ -56,6 +66,15 @@ const posts = (await getCollection('blog')).sort(
 				margin: 0;
 				color: rgb(var(--black));
 				line-height: 1;
+			}
+			.date {
+				display: block;
+				margin-top: 0.5rem;
+				color: rgb(var(--gray));
+			}
+			ul a:hover h4,
+			ul a:hover .date {
+				color: rgb(var(--accent));
 			}
 			.date {
 				margin: 0;
@@ -93,12 +112,19 @@ const posts = (await getCollection('blog')).sort(
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/blog/${post.id}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
+								<a href={`/days/${post.id}/`}>
+									{post.data.heroImage && (
+										<img width={720} height={360} src={post.data.heroImage} alt="" />
+									)}
+
+									<h6 class="title">{post.data.title}</h6>
+									<p class="description">{post.data.description}</p>
+
+									{post.data.pubDate && (
+										<p class="date">
+											<FormattedDate date={post.data.pubDate} />
+										</p>
+									)}
 								</a>
 							</li>
 						))
