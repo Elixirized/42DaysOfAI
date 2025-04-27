@@ -15,6 +15,12 @@ const posts = raw
     return { ...post, slug };
   })
   .sort((a, b) => {
+		// 1️⃣ Compare slugs first
+		// this will treat digit sequences numerically:
+		const slugCmp = a.slug.localeCompare(b.slug, undefined, { numeric: true })
+    if (slugCmp !== 0) return slugCmp;
+		
+    // 2️⃣ If slugs are equal, fall back to pubDate (newest first)
     const aMs = a.data.pubDate?.valueOf() ?? 0;
     const bMs = b.data.pubDate?.valueOf() ?? 0;
     return bMs - aMs;
