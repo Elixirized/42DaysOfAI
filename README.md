@@ -1,12 +1,11 @@
-# 21 Days of Code 
+# 21 Days of Code - CONTENT
+
+This is repo for the content behind [**42 Days of AI**](https://42DaysOfAi.com), our quest to build a community of AI
+application builders in just six weeks of content and exercises.
+
+## 🚀 Looking for the code?
+
+If you are looking for the daily code examples, head on over to https://github.com/42DaysOfAI, which is the home those repos and other goodies.
 
 
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
