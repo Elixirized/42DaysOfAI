@@ -168,8 +168,8 @@ blockquote {
 	padding: 0 0 0 20px;
 	margin: 0px;
 	font-size: 1.1em;
-	gont-weight: 600;
-	color: rgb(6, 0, 8)
+	font-weight: 400;
+	color: rgb(--accent-dark)
 }
 hr {
 	border: none;
