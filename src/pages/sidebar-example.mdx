@@ -1,0 +1,28 @@
+---
+title: "Page With Imported Sidebar Content"
+layout: "../layouts/BaseLayout.astro"
+---
+import Sidebar        from '../components/Sidebar.astro';
+import SidebarContent from './capstone.mdx';
+
+# Here is the Title
+
+Here is a bunch of text outside of the part that is affected by the sidebar(??)
+
+  <div style="display: flex; gap:1rem; margin:2rem 0;">
+    <main style="flex:1; padding:1rem;">
+    ## Section Next To Sidebar
+
+    This chunk of Markdown will live beside the sidebar. You can write
+    lists, prose, code blocks, whatever.
+    </main>
+
+    <Sidebar>
+      <SidebarContent />
+    </Sidebar>
+  </div>
+  
+
+# Another Full-Width Section
+
+And now we’re back to full-width Markdown without any sidebar wrapping.

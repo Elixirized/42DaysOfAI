@@ -129,7 +129,13 @@ const posts = raw
 									)}
 
 									<h6 class="title">{post.data.title}</h6>
-									<p class="description">{post.data.description}</p>
+									<p class="description">
+										{post.data.description}
+										{/* {post.data.description.map((item, i) => (
+											<li key={i}>{item}</li>
+										))} */}
+									</p>
+									
 
 									{post.data.pubDate && (
 										<p class="date">
