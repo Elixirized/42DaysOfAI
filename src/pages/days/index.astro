@@ -5,6 +5,10 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+const days = await getCollection('days');
+// console.log('loaded days:', days.map((d) => d.slug));
+// console.log('loaded ids:', days.map((d) => d.id));
+
 
 const raw = await getCollection('days');
 

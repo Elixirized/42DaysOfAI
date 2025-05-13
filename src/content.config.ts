@@ -1,9 +1,8 @@
 import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
 
-const days = defineCollection({
-	// Load Markdown and MDX files in the `src/content/days/` directory.
-	loader: glob({ base: './src/content/days', pattern: '**/*.{md,mdx}' }),
+export const collections = {
+  days: defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
@@ -17,11 +16,15 @@ const days = defineCollection({
 	// add a “computed” to always cast it to an array
 	// JSH: Doe NOT work ...
   computed: {
+		// turn "description: - foo\n- bar" into ["foo", "bar"]
+		// JSH: Doe NOT work ...
     descriptionArray: ({ data }) =>
-      typeof data.description === 'string'
-        ? data.description.split('\n').filter((l) => l.trim().startsWith('-')).map((l) => l.replace(/^- */, '').trim())
-        : data.description,
-  },
-});
-
-export const collections = { days };
+			typeof data.description === 'string'
+				? data.description
+						.split('\n')
+						.filter((l) => l.trim().startsWith('-'))
+						.map((l) => l.replace(/^- */, '').trim())
+				: data.description ?? [],
+			},
+		}),
+	};
