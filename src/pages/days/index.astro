@@ -5,7 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
-const days = await getCollection('days');
+// const days = await getCollection('days');
 // console.log('loaded days:', days.map((d) => d.slug));
 // console.log('loaded ids:', days.map((d) => d.id));
 
@@ -13,11 +13,11 @@ const days = await getCollection('days');
 const raw = await getCollection('days');
 
 const posts = raw
-  .map((post) => {
-    // post.id is something like "your-file-name.mdx" or "another-post.md"
-    const slug = post.id.replace(/\.(mdx|md)$/, '');
-    return { ...post, slug };
-  })
+  .map((post) => ({
+    ...post,
+    // compute slug by stripping extension
+    slug: post.id.replace(/\.(mdx|md)$/, ''),
+  }))
   .sort((a, b) => {
 		// 1️⃣ Compare slugs first
 		// this will treat digit sequences numerically:
@@ -127,7 +127,8 @@ const posts = raw
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/days/${post.id}/`}>
+								{/* ← use post.slug, not post.id */}
+								<a href={`/days/${post.slug}/`}>
 									{post.data.heroImage && (
 										<img width={720} height={360} src={post.data.heroImage} alt="" />
 									)}

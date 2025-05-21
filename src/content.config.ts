@@ -1,30 +1,43 @@
-import { glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content';
+// src/content/config.ts
+import { z, defineCollection } from 'astro:content';
 
-export const collections = {
-  days: defineCollection({
-	// Type-check frontmatter using a schema
-	schema: z.object({
-		title: z.string(),
-		// allow string _or_ string-array
+// 1️⃣ Shared schema
+const baseSchema = z
+  .object({
+    title:       z.string(),
     description: z.union([z.string(), z.array(z.string())]),
-		// Transform string to Date object
-		pubDate: z.coerce.date().optional(),
-		updatedDate: z.coerce.date().optional(),
-		heroImage: z.string().optional(),
-	}),
-	// add a “computed” to always cast it to an array
-	// JSH: Doe NOT work ...
-  computed: {
-		// turn "description: - foo\n- bar" into ["foo", "bar"]
-		// JSH: Doe NOT work ...
-    descriptionArray: ({ data }) =>
-			typeof data.description === 'string'
-				? data.description
-						.split('\n')
-						.filter((l) => l.trim().startsWith('-'))
-						.map((l) => l.replace(/^- */, '').trim())
-				: data.description ?? [],
-			},
-		}),
-	};
+    pubDate:     z.coerce.date().optional(),
+    updatedDate: z.coerce.date().optional(),
+    heroImage:   z.string().optional(),
+  })
+  .transform((data) => {
+    // compute descriptionArray
+    const descriptionArray = typeof data.description === 'string'
+      ? data.description
+          .split('\n')
+          .filter((l) => l.trim().startsWith('-'))
+          .map((l) => l.replace(/^- */, '').trim())
+      : data.description ?? [];
+    return { ...data, descriptionArray };
+  });
+
+
+// 3️⃣ Define each collection using the shared pieces
+const daysCollection = defineCollection({
+  schema:   baseSchema,
+});
+
+const draftCollection = defineCollection({
+  schema:   baseSchema,
+});
+
+const sidebarsCollection = defineCollection({
+	schema: z.any(),  // no computed needed here, unless you want to derive extra props
+});
+
+// 4️⃣ Export them all
+export const collections = {
+  days:   daysCollection,
+  draft:  draftCollection,
+	sidebars: sidebarsCollection,
+};
