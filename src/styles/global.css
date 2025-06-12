@@ -130,6 +130,11 @@ ul,
 ol {
 	margin: 0 0 1.5em 0;
 }
+
+.day_container {
+	margin-left: 10%;
+	margin-right: 10%;
+}
 .prose p {
 	margin-bottom: 1em;
 }
