@@ -1,0 +1,586 @@
+---
+title: "Day 1: Dev Environment Setup"
+description: |
+  • VSCode configuration for Python 
+  • Essential VSCode extensions
+  • Python libraries
+  • Install AI-focused libraries 
+  • Introduction to Jupyter notebooks and embedding that into VSCode 
+  • NOTE: Even if you are an experienced developer, you will benefit from the VSCode and AI libraries details
+  • SIDEBAR: Preview of the Capstone project
+  • RESOURCES: References to dive deeper on today's topics/tools.
+
+---
+
+# Install VSCode
+
+If you don't already have VSCode installed, go do that [here](https://code.visualstudio.com/).
+
+## VSCode Command Palette
+
+The Command Palette in VS Code is a powerful feature that allows you to quickly access
+commands and features by typing their names. It's like a shortcut hub for all the actions
+within the editor.
+
+To open it, press Ctrl+Shift+P (or Cmd+Shift+P on Mac), and start typing your command. It's
+awesome because it speeds up your workflow by letting you jump to any function without
+navigating through menus or remembering keyboard shortcuts.
+
+-->> Show a picture
+
+# Install VSCode Extensions
+
+To make the most of your Python development experience in VSCode, you'll want to install some essential extensions. Here are a few key extensions that will enhance your workflow:
+
+1. **Python**: This extension provides rich support for Python, including IntelliSense, linting, debugging, and code navigation. It is essential for any Python development in VSCode.
+
+2. **Jupyter**: This extension allows you to work with Jupyter notebooks directly within VSCode. It provides a great interface for running and editing notebooks, making it easier to work with data science projects and AI models.
+
+3. **Pylance**: This is a fast and feature-rich language server for Python, providing improved IntelliSense and type checking. It works seamlessly with the Python extension to enhance your coding experience.
+
+4. **GitLens**: This extension supercharges the built-in Git capabilities of VSCode. It provides insights into code authorship, history, and more, making it easier to collaborate on projects
+
+5. **Prettier - Code formatter**: This extension helps maintain consistent code formatting across your projects. It supports multiple languages, including Python, and can be configured to run automatically on save.
+
+6. **Live Share**: This extension allows you to collaborate in real-time with others directly within VSCode. It's great for pair programming or code reviews.
+
+7. **Docker**: If you're working with containerized applications, this extension provides support for Docker, allowing you to build, manage, and deploy containers directly from VSCode.
+
+8. **Remote - SSH**: This extension allows you to connect to remote machines via SSH and work with files and folders as if they were local. It's useful for working on remote servers or cloud instances.
+
+9. **Path Intellisense**: This extension provides autocompletion for file paths in your code, making it easier to navigate and reference files within your project.
+
+10. **Python Extention Pack**: This is a collection of essential Python extensions that includes the Python, Pylance, and Jupyter extensions, among others. It simplifies the setup process by bundling these key tools together.
+
+11. **GitHub Copilot**: This AI-powered code completion tool helps you write code faster and with fewer errors by suggesting entire lines or blocks of code based on your input. It can be a game-changer for productivity, especially in complex projects.
+
+12. **GitHub Pull Requests and Issues**: This extension allows you to manage GitHub pull requests and issues directly within VSCode. It streamlines the code review process and makes it easier to collaborate on projects hosted on GitHub.
+
+13. **Ruff**: This is a fast Python linter that helps you catch errors and enforce coding standards in your Python code. It integrates well with the Python extension and provides real-time feedback as you code.
+
+14. **Better Comments**: This extension helps you create more readable and organized comments in your code by allowing you to categorize comments with different colors and styles. It can improve code readability and make it easier to understand the purpose of different sections of your code.
+
+There are many more extensions available in the VSCode marketplace, but these are some of the most essential ones for Python development and AI projects. You can install them by searching for their names in the Extensions view (Ctrl+Shift+X or Cmd+Shift+X on Mac) and clicking the Install button.
+
+# ValidatePython/AI Libraries Guide - Manual Setup
+
+## Table of Contents
+1. [macOS Setup](#macos-setup)
+2. [Windows Setup](#windows-setup)
+3. [WSL (Windows Subsystem for Linux) Setup](#wsl-setup)
+4. [Linux Setup](#linux-setup)
+5. [Essential Libraries for Business Web Apps](#essential-libraries)
+6. [Testing Your Setup](#testing-setup) 
+7. [Creating Your First Business Web App](#first-web-app)
+
+---
+
+## macOS Setup
+
+### Step 1: Install Homebrew (Package Manager)
+```bash
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Add Homebrew to PATH (for Apple Silicon Macs)
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+source ~/.zshrc
+
+# Verify installation
+brew --version
+```
+
+### Step 2: Install Python
+```bash
+# Install latest Python
+brew install python
+
+# Verify installation
+python3 --version
+pip3 --version
+```
+
+### Step 3: Create Virtual Environment
+```bash
+# Create project directory
+mkdir business-web-app
+cd business-web-app
+
+# Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Verify activation (should show (venv) in prompt)
+which python
+```
+
+### Step 4: Install Essential Packages
+```bash
+# Upgrade pip first
+pip install --upgrade pip
+
+# Install Jupyter and essential libraries
+pip install jupyter jupyterlab
+
+# Install web development packages
+pip install flask django fastapi streamlit
+
+# Install data science packages
+pip install pandas numpy matplotlib seaborn plotly
+
+# Install database packages
+pip install sqlalchemy psycopg2-binary pymongo
+
+# Install additional utilities
+pip install requests beautifulsoup4 python-dotenv
+
+# Save requirements
+pip freeze > requirements.txt
+```
+
+### Step 5: Launch Jupyter
+```bash
+# Start Jupyter Lab (recommended)
+jupyter lab
+
+# Or start classic Jupyter Notebook
+jupyter notebook
+```
+
+---
+
+## Windows Setup
+
+### Step 1: Install Python
+1. **Download Python:**
+   - Go to https://python.org/downloads/
+   - Download latest Python 3.x for Windows
+   - **Important:** Check "Add Python to PATH" during installation
+
+2. **Alternative - Using winget:**
+```cmd
+# Install using Windows Package Manager
+winget install Python.Python.3
+```
+
+### Step 2: Verify Installation
+```cmd
+# Open Command Prompt or PowerShell
+python --version
+pip --version
+
+# If python command doesn't work, try:
+python3 --version
+py --version
+```
+
+### Step 3: Create Virtual Environment
+```cmd
+# Create project directory
+mkdir business-web-app
+cd business-web-app
+
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+venv\Scripts\activate
+
+# Verify activation (should show (venv) in prompt)
+where python
+```
+
+### Step 4: Install Essential Packages
+```cmd
+# Upgrade pip
+python -m pip install --upgrade pip
+
+# Install Jupyter and essential libraries
+pip install jupyter jupyterlab
+
+# Install web development packages
+pip install flask django fastapi streamlit
+
+# Install data science packages
+pip install pandas numpy matplotlib seaborn plotly
+
+# Install database packages
+pip install sqlalchemy psycopg2-binary pymongo
+
+# Install additional utilities
+pip install requests beautifulsoup4 python-dotenv
+
+# Save requirements
+pip freeze > requirements.txt
+```
+
+### Step 5: Launch Jupyter
+```cmd
+# Start Jupyter Lab
+jupyter lab
+
+# Or start classic Jupyter Notebook
+jupyter notebook
+```
+
+---
+
+## WSL Setup
+
+### Step 1: Install WSL
+```powershell
+# Run in PowerShell as Administrator
+wsl --install
+
+# Restart computer when prompted
+# Set up Ubuntu username and password
+```
+
+### Step 2: Update Ubuntu in WSL
+```bash
+# Update package lists
+sudo apt update && sudo apt upgrade -y
+
+# Install essential tools
+sudo apt install -y build-essential curl git
+```
+
+### Step 3: Install Python
+```bash
+# Install Python and pip
+sudo apt install -y python3 python3-pip python3-venv python3-dev
+
+# Verify installation
+python3 --version
+pip3 --version
+```
+
+### Step 4: Create Virtual Environment
+```bash
+# Create project directory
+mkdir ~/business-web-app
+cd ~/business-web-app
+
+# Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Verify activation
+which python
+```
+
+### Step 5: Install Essential Packages
+```bash
+# Upgrade pip
+pip install --upgrade pip
+
+# Install Jupyter and essential libraries
+pip install jupyter jupyterlab
+
+# Install web development packages
+pip install flask django fastapi streamlit
+
+# Install data science packages
+pip install pandas numpy matplotlib seaborn plotly
+
+# Install database packages
+pip install sqlalchemy psycopg2-binary pymongo
+
+# Install additional utilities
+pip install requests beautifulsoup4 python-dotenv
+
+# Save requirements
+pip freeze > requirements.txt
+```
+
+### Step 6: Launch Jupyter
+```bash
+# Start Jupyter Lab
+jupyter lab --ip=0.0.0.0 --port=8888 --no-browser
+
+# Access via Windows browser at: http://localhost:8888
+```
+
+---
+
+## Linux Setup
+
+### Step 1: Update System
+```bash
+# Ubuntu/Debian
+sudo apt update && sudo apt upgrade -y
+
+# CentOS/RHEL/Fedora
+sudo dnf update -y
+# or for older versions: sudo yum update -y
+```
+
+### Step 2: Install Python and Dependencies
+```bash
+# Ubuntu/Debian
+sudo apt install -y python3 python3-pip python3-venv python3-dev build-essential
+
+# CentOS/RHEL/Fedora
+sudo dnf install -y python3 python3-pip python3-devel gcc gcc-c++ make
+```
+
+### Step 3: Create Virtual Environment
+```bash
+# Create project directory
+mkdir ~/business-web-app
+cd ~/business-web-app
+
+# Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Verify activation
+which python
+```
+
+### Step 4: Install Essential Packages
+```bash
+# Upgrade pip
+pip install --upgrade pip
+
+# Install Jupyter and essential libraries
+pip install jupyter jupyterlab
+
+# Install web development packages
+pip install flask django fastapi streamlit
+
+# Install data science packages
+pip install pandas numpy matplotlib seaborn plotly
+
+# Install database packages
+pip install sqlalchemy psycopg2-binary pymongo
+
+# Install additional utilities
+pip install requests beautifulsoup4 python-dotenv
+
+# Save requirements
+pip freeze > requirements.txt
+```
+
+### Step 5: Launch Jupyter
+```bash
+# Start Jupyter Lab
+jupyter lab
+
+# Or start classic Jupyter Notebook
+jupyter notebook
+```
+
+---
+
+## Essential Libraries for Business Web Applications
+
+### Core Web Frameworks
+- **Flask**: Lightweight, flexible web framework
+- **Django**: Full-featured web framework with admin interface
+- **FastAPI**: Modern, fast API framework with automatic documentation
+- **Streamlit**: Rapid web app development for data science
+
+### Data Handling
+- **Pandas**: Data manipulation and analysis
+- **NumPy**: Numerical computing
+- **SQLAlchemy**: Database ORM
+- **psycopg2**: PostgreSQL adapter
+- **pymongo**: MongoDB driver
+
+### Visualization
+- **Matplotlib**: Basic plotting
+- **Seaborn**: Statistical visualization
+- **Plotly**: Interactive visualizations
+- **Bokeh**: Interactive web visualizations
+
+### Utilities
+- **Requests**: HTTP library
+- **BeautifulSoup4**: Web scraping
+- **python-dotenv**: Environment variable management
+- **Celery**: Task queue for background jobs
+
+### Additional Business Tools
+```bash
+# Install additional business-focused packages
+pip install openpyxl xlsxwriter  # Excel file handling
+pip install pillow              # Image processing
+pip install reportlab           # PDF generation
+pip install sendgrid            # Email services
+pip install stripe              # Payment processing
+pip install boto3               # AWS services
+```
+
+---
+
+## Testing Your Setup
+
+### Create a Test Jupyter Notebook
+1. **Start Jupyter Lab:**
+```bash
+jupyter lab
+```
+
+2. **Create new notebook:** Click "+" then select "Python 3"
+
+3. **Test basic functionality:**
+```python
+# Cell 1: Test imports
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import plotly.express as px
+print("All libraries imported successfully!")
+
+# Cell 2: Test data handling
+df = pd.DataFrame({
+    'x': range(10),
+    'y': np.random.randn(10)
+})
+print(df.head())
+
+# Cell 3: Test visualization
+plt.figure(figsize=(8, 4))
+plt.plot(df['x'], df['y'])
+plt.title('Test Plot')
+plt.show()
+```
+
+### Test Web Framework
+Create a simple Flask app:
+```python
+# In Jupyter cell or separate file
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return '<h1>Hello, Business Web App!</h1>'
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
+```
+
+---
+
+## Creating Your First Business Web App
+
+### Simple Streamlit Dashboard
+Create file `dashboard.py`:
+```python
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+
+st.title('Business Dashboard')
+
+# Sample data
+data = pd.DataFrame({
+    'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+    'Revenue': [10000, 12000, 15000, 11000, 18000],
+    'Expenses': [8000, 9000, 10000, 8500, 12000]
+})
+
+# Display metrics
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.metric('Total Revenue', f"${data['Revenue'].sum():,}")
+with col2:
+    st.metric('Total Expenses', f"${data['Expenses'].sum():,}")
+with col3:
+    profit = data['Revenue'].sum() - data['Expenses'].sum()
+    st.metric('Net Profit', f"${profit:,}")
+
+# Display chart
+fig = px.line(data, x='Month', y=['Revenue', 'Expenses'], 
+              title='Revenue vs Expenses')
+st.plotly_chart(fig)
+
+# Display data table
+st.subheader('Raw Data')
+st.dataframe(data)
+```
+
+Run with:
+```bash
+streamlit run dashboard.py
+```
+
+### Project Structure
+```
+business-web-app/
+├── venv/                 # Virtual environment
+├── notebooks/            # Jupyter notebooks
+├── src/                  # Source code
+├── data/                 # Data files
+├── templates/            # HTML templates
+├── static/               # CSS, JS, images
+├── requirements.txt      # Dependencies
+├── .env                  # Environment variables
+└── README.md            # Project documentation
+```
+
+### Best Practices
+1. **Always use virtual environments**
+2. **Keep requirements.txt updated**
+3. **Use .env files for sensitive data**
+4. **Version control with Git**
+5. **Document your code**
+6. **Test your applications**
+
+---
+
+## Troubleshooting Common Issues
+
+### Permission Errors
+```bash
+# Use --user flag if needed
+pip install --user package_name
+```
+
+### Command Not Found
+```bash
+# Make sure virtual environment is activated
+# Check PATH includes Python scripts directory
+echo $PATH | grep python
+```
+
+### Module Import Errors
+```bash
+# Verify package installation
+pip list | grep package_name
+# Reinstall if necessary
+pip install --force-reinstall package_name
+```
+
+### Port Already in Use
+```bash
+# Kill process using port (Linux/macOS)
+lsof -ti:8888 | xargs kill -9
+
+# Windows
+netstat -ano | findstr :8888
+taskkill /PID <PID> /F
+```
+
+
+This setup provides a solid foundation for developing business web applications with Python and Jupyter Notebooks, we will discuss essential libraries across all major platforms in more depth in the coming days. Also, the face of AI development changes day to day and we will be updating this as we go along.
+
+
+
+
+# Sidebar
+
+We will iterate on VSCode extensions and Python libraries throughout our 
+adventure, culminating with an "ideal" set of configurations, etc. Much of what is here is tested on MacOs Sequoia, yet the other OS versions are covered. Adjustments might need to be made for Windows, WSL or Linux. This is a technical setup day, so don't worry if you don't understand everything. We will be using these tools throughout the course, and you will become familiar with them as we go along. 
+The goal is to get you up and running with a solid development environment that will support your learning and projects.
+
+
+
+
