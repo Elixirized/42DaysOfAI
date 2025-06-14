@@ -13,8 +13,8 @@
 • RESOURCES: Links to related articles/videos.
 </description></item><item><title>Day 3: AI Prompt Engineering, Part 1</title><link>https://42daysofai.com/days/day-3/</link><guid isPermaLink="true">https://42daysofai.com/days/day-3/</guid><description>• Prompt Engineering: Getting the LLM to do what you want.
 • Multiple examples of best and worst prompt practices (using ChatGPT free).
-• SIDEBAR: We didn&apos;t used to know how to spell &quot;prompt engineer.&quot; Now we are one.
-• RESOURCES: Prompt engineering/vibe coding &quot;greates hits&quot; articles list.
+• SIDEBAR: I didn&apos;t used to know how to spell &quot;prompt engineer.&quot; Now I are one.
+• RESOURCES: Prompt engineering/vibe coding &quot;greatest hits&quot; articles list.
 </description></item><item><title>Day 4: AI Prompt Engineering, Part 2</title><link>https://42daysofai.com/days/day-4/</link><guid isPermaLink="true">https://42daysofai.com/days/day-4/</guid><description>• Invoke a LLM using a chat-like prompt via its API. (Example: 
 &apos;How would you go about designing a program that keeps itself updated as
 the underlying technology evolves.&apos;)
