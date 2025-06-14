@@ -1,4 +1,4 @@
-# 21 Days of Code - CONTENT
+# 21 Days of AI - CONTENT
 
 This is repo for the content behind [**42 Days of AI**](https://42DaysOfAi.com), our quest to build a community of AI
 application builders in just six weeks of content and exercises.
