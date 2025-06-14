@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>42 Days of AI</title><description>Welcome to you AI adventure!</description><link>https://42daysofai.com/</link><item><title>Day 1: Dev Environment Setup</title><link>https://42daysofai.com/days/day-1-jh/</link><guid isPermaLink="true">https://42daysofai.com/days/day-1-jh/</guid><description>• VSCode configuration for Python 
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>42 Days of AI</title><description>Welcome to you AI adventure!</description><link>https://42daysofai.com/</link><item><title>Content Outline</title><link>https://42daysofai.com/days/content-outline/</link><guid isPermaLink="true">https://42daysofai.com/days/content-outline/</guid><description>Evolving (high-level) outline of the content we envision for our 42 days of AI.
+</description></item><item><title>Day 1: Dev Environment Setup</title><link>https://42daysofai.com/days/day-1/</link><guid isPermaLink="true">https://42daysofai.com/days/day-1/</guid><description>• VSCode configuration for Python 
 • Essential VSCode extensions
 • Python libraries
 • Install AI-focused libraries 

@@ -1,0 +1,488 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- site‐wide head defaults --><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="42 Days of AI" href="https://42daysofai.com/rss.xml"><meta name="generator" content="Astro v5.7.5"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://42daysofai.com/days/day-1/"><!-- Primary Meta Tags --><title></title><meta name="title"><meta name="description"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://42daysofai.com/days/day-1/"><meta property="og:title"><meta property="og:description"><meta property="og:image" content="https://42daysofai.com/blog-placeholder-1.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://42daysofai.com/days/day-1/"><meta property="twitter:title"><meta property="twitter:description"><meta property="twitter:image" content="https://42daysofai.com/blog-placeholder-1.jpg"><!-- per‐page head --><title>Day 1: Dev Environment Setup – 42 Days of AI</title><meta name="description" content="• VSCode configuration for Python 
+• Essential VSCode extensions
+• Python libraries
+• Install AI-focused libraries 
+• Introduction to Jupyter notebooks and embedding that into VSCode 
+• NOTE: Even if you are an experienced developer, you will benefit from the VSCode and AI libraries details
+• SIDEBAR: Preview of the Capstone project
+• RESOURCES: References to dive deeper on today's topics/tools.
+"><!-- analytics --><script defer data-domain="42daysofai.com" src="https://plausible.io/js/script.js"></script><style>:root{--accent: #2337ff;--accent-dark: #000d8a;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}@theme{ --font-sans: "Roboto Variable", "sans-serif"; }@font-face{font-family:Atkinson;src:url(/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{display:flex;flex-direction:column;min-height:100vh;font-family:Roboto Variable,sans-serif;margin:0;padding:0;text-align:left;background-image:linear-gradient(#ffffffd9,#ffffffd9),url(/images/AI%20Background%20MMaitoza.png);background-size:cover;background-position:center;background-repeat:no-repeat;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--black));font-size:20px;line-height:1.7}.body:before{content:"";position:absolute;inset:0;background:url(/images/bg.jpg) center/cover no-repeat;opacity:.5;z-index:-1}main{flex:1 0 auto;overflow:auto;width:90%;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{color:rgb(var(--black));line-height:1.2}h1{font-size:2em}h2{font-size:1.5em}h3{font-size:1.25em}h4{font-size:1em}h5{font-size:.75em}h6{font-size:.5em}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em}.description{font-size:1em;line-height:1.33em;text-align:left}p code{font-size:.8em}ul,ol{margin:0 0 1.5em}.day_container{margin-left:10%;margin-right:10%}.prose p{margin-bottom:1em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%}img{max-width:100%;height:auto;border-radius:8px}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:2px}pre{padding:1.5em;border-radius:8px}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:0;font-size:1.1em;font-weight:400;color:rgb(--accent-dark)}hr{border:none;border-top:1px solid rgb(var(--gray-light))}@media (max-width: 720px){body{font-size:18px}main{padding:1em}}.sidebar{flex:0 0 95%;font-size:90%;padding:1rem;background-color:#e7d6f66f;border:1px solid #4185dd;border-radius:.25rem;box-shadow:0 1px 3px #0000001a}.sidebar h1,h2,h3,h4,h5,h6{margin-top:0;text-align:center}.layout{display:flex}.main{flex:1;padding:1rem}@media (max-width: 768px){.sidebar{display:none}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}
+a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0;padding:0 1em;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%)}h2[data-astro-cid-3ef6ksr2]{margin:0;font-size:1em}h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2],h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{padding:1em .5em;color:var(--black);border-bottom:4px solid transparent;text-decoration:none}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none;border-bottom-color:var(--accent)}.social-links[data-astro-cid-3ef6ksr2],.social-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{display:flex}@media (max-width: 720px){.social-links[data-astro-cid-3ef6ksr2]{display:none}}footer[data-astro-cid-sz7xmlte]{padding:1em;background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center;font-size:medium}.social-links[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:.5em}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{text-decoration:none;color:rgb(var(--gray))}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:rgb(var(--gray-dark))}
+</style></head> <body> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>42 Days of AI</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/days" class="active" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Days </a>  <a href="/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a>  </div> <div class="social-links" data-astro-cid-3ef6ksr2> <a href="https://discord.gg/RYF58mGfbg" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to our Discord server</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="28" astro-icon="social/discord" data-astro-cid-3ef6ksr2> <path fill="currentColor" d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" data-astro-cid-3ef6ksr2></path> </svg> </a> <a href="https://bsky.app/profile/42daysofai.com" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to Bluesky</span> <svg role="img" viewBox="0 0 24 24" aria-hidden="true" width="32" height="28" xmlns="http://www.w3.org/2000/svg" data-astro-cid-3ef6ksr2> <title>Bluesky</title> <path fill="currentColor" d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z" data-astro-cid-3ef6ksr2></path> </svg> </a> <a href="https://github.com/42DaysOfAI" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to our GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-3ef6ksr2></path></svg> </a> </div> </nav> </header>  <main>  <div class="day_container"> <h1 id="install-vscode">Install VSCode</h1>
+<p>If you don’t already have VSCode installed, go do that <a href="https://code.visualstudio.com/">here</a>.</p>
+<h2 id="vscode-command-palette">VSCode Command Palette</h2>
+<p>The Command Palette in VS Code is a powerful feature that allows you to quickly access
+commands and features by typing their names. It’s like a shortcut hub for all the actions
+within the editor.</p>
+<p>To open it, press Ctrl+Shift+P (or Cmd+Shift+P on Mac), and start typing your command. It’s
+awesome because it speeds up your workflow by letting you jump to any function without
+navigating through menus or remembering keyboard shortcuts.</p>
+<p>—&gt;&gt; Show a picture</p>
+<h1 id="install-vscode-extensions">Install VSCode Extensions</h1>
+<p>To make the most of your Python development experience in VSCode, you’ll want to install some essential extensions. Here are a few key extensions that will enhance your workflow:</p>
+<ol>
+<li>
+<p><strong>Python</strong>: This extension provides rich support for Python, including IntelliSense, linting, debugging, and code navigation. It is essential for any Python development in VSCode.</p>
+</li>
+<li>
+<p><strong>Jupyter</strong>: This extension allows you to work with Jupyter notebooks directly within VSCode. It provides a great interface for running and editing notebooks, making it easier to work with data science projects and AI models.</p>
+</li>
+<li>
+<p><strong>Pylance</strong>: This is a fast and feature-rich language server for Python, providing improved IntelliSense and type checking. It works seamlessly with the Python extension to enhance your coding experience.</p>
+</li>
+<li>
+<p><strong>GitLens</strong>: This extension supercharges the built-in Git capabilities of VSCode. It provides insights into code authorship, history, and more, making it easier to collaborate on projects</p>
+</li>
+<li>
+<p><strong>Prettier - Code formatter</strong>: This extension helps maintain consistent code formatting across your projects. It supports multiple languages, including Python, and can be configured to run automatically on save.</p>
+</li>
+<li>
+<p><strong>Live Share</strong>: This extension allows you to collaborate in real-time with others directly within VSCode. It’s great for pair programming or code reviews.</p>
+</li>
+<li>
+<p><strong>Docker</strong>: If you’re working with containerized applications, this extension provides support for Docker, allowing you to build, manage, and deploy containers directly from VSCode.</p>
+</li>
+<li>
+<p><strong>Remote - SSH</strong>: This extension allows you to connect to remote machines via SSH and work with files and folders as if they were local. It’s useful for working on remote servers or cloud instances.</p>
+</li>
+<li>
+<p><strong>Path Intellisense</strong>: This extension provides autocompletion for file paths in your code, making it easier to navigate and reference files within your project.</p>
+</li>
+<li>
+<p><strong>Python Extention Pack</strong>: This is a collection of essential Python extensions that includes the Python, Pylance, and Jupyter extensions, among others. It simplifies the setup process by bundling these key tools together.</p>
+</li>
+<li>
+<p><strong>GitHub Copilot</strong>: This AI-powered code completion tool helps you write code faster and with fewer errors by suggesting entire lines or blocks of code based on your input. It can be a game-changer for productivity, especially in complex projects.</p>
+</li>
+<li>
+<p><strong>GitHub Pull Requests and Issues</strong>: This extension allows you to manage GitHub pull requests and issues directly within VSCode. It streamlines the code review process and makes it easier to collaborate on projects hosted on GitHub.</p>
+</li>
+<li>
+<p><strong>Ruff</strong>: This is a fast Python linter that helps you catch errors and enforce coding standards in your Python code. It integrates well with the Python extension and provides real-time feedback as you code.</p>
+</li>
+<li>
+<p><strong>Better Comments</strong>: This extension helps you create more readable and organized comments in your code by allowing you to categorize comments with different colors and styles. It can improve code readability and make it easier to understand the purpose of different sections of your code.</p>
+</li>
+</ol>
+<p>There are many more extensions available in the VSCode marketplace, but these are some of the most essential ones for Python development and AI projects. You can install them by searching for their names in the Extensions view (Ctrl+Shift+X or Cmd+Shift+X on Mac) and clicking the Install button.</p>
+<h1 id="validatepythonai-libraries-guide---manual-setup">ValidatePython/AI Libraries Guide - Manual Setup</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#macos-setup">macOS Setup</a></li>
+<li><a href="#windows-setup">Windows Setup</a></li>
+<li><a href="#wsl-setup">WSL (Windows Subsystem for Linux) Setup</a></li>
+<li><a href="#linux-setup">Linux Setup</a></li>
+<li><a href="#essential-libraries">Essential Libraries for Business Web Apps</a></li>
+<li><a href="#testing-setup">Testing Your Setup</a></li>
+<li><a href="#first-web-app">Creating Your First Business Web App</a></li>
+</ol>
+<hr/>
+<h2 id="macos-setup">macOS Setup</h2>
+<h3 id="step-1-install-homebrew-package-manager">Step 1: Install Homebrew (Package Manager)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install Homebrew</span></span>
+<span class="line"><span style="color:#B392F0">/bin/bash</span><span style="color:#79B8FF"> -c</span><span style="color:#9ECBFF"> &quot;$(</span><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -fsSL</span><span style="color:#9ECBFF"> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Add Homebrew to PATH (for Apple Silicon Macs)</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> &#39;eval &quot;$(/opt/homebrew/bin/brew shellenv)&quot;&#39;</span><span style="color:#F97583"> &gt;&gt;</span><span style="color:#9ECBFF"> ~/.zshrc</span></span>
+<span class="line"><span style="color:#79B8FF">source</span><span style="color:#9ECBFF"> ~/.zshrc</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Verify installation</span></span>
+<span class="line"><span style="color:#B392F0">brew</span><span style="color:#79B8FF"> --version</span></span></code></pre>
+<h3 id="step-2-install-python">Step 2: Install Python</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install latest Python</span></span>
+<span class="line"><span style="color:#B392F0">brew</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> python</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Verify installation</span></span>
+<span class="line"><span style="color:#B392F0">python3</span><span style="color:#79B8FF"> --version</span></span>
+<span class="line"><span style="color:#B392F0">pip3</span><span style="color:#79B8FF"> --version</span></span></code></pre>
+<h3 id="step-3-create-virtual-environment">Step 3: Create Virtual Environment</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Create project directory</span></span>
+<span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#9ECBFF"> business-web-app</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> business-web-app</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Create virtual environment</span></span>
+<span class="line"><span style="color:#B392F0">python3</span><span style="color:#79B8FF"> -m</span><span style="color:#9ECBFF"> venv</span><span style="color:#9ECBFF"> venv</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Activate virtual environment</span></span>
+<span class="line"><span style="color:#79B8FF">source</span><span style="color:#9ECBFF"> venv/bin/activate</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Verify activation (should show (venv) in prompt)</span></span>
+<span class="line"><span style="color:#79B8FF">which</span><span style="color:#9ECBFF"> python</span></span></code></pre>
+<h3 id="step-4-install-essential-packages">Step 4: Install Essential Packages</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Upgrade pip first</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> --upgrade</span><span style="color:#9ECBFF"> pip</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install Jupyter and essential libraries</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> jupyter</span><span style="color:#9ECBFF"> jupyterlab</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install web development packages</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> flask</span><span style="color:#9ECBFF"> django</span><span style="color:#9ECBFF"> fastapi</span><span style="color:#9ECBFF"> streamlit</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install data science packages</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> pandas</span><span style="color:#9ECBFF"> numpy</span><span style="color:#9ECBFF"> matplotlib</span><span style="color:#9ECBFF"> seaborn</span><span style="color:#9ECBFF"> plotly</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install database packages</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> sqlalchemy</span><span style="color:#9ECBFF"> psycopg2-binary</span><span style="color:#9ECBFF"> pymongo</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install additional utilities</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> requests</span><span style="color:#9ECBFF"> beautifulsoup4</span><span style="color:#9ECBFF"> python-dotenv</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Save requirements</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> freeze</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> requirements.txt</span></span></code></pre>
+<h3 id="step-5-launch-jupyter">Step 5: Launch Jupyter</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Start Jupyter Lab (recommended)</span></span>
+<span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> lab</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Or start classic Jupyter Notebook</span></span>
+<span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> notebook</span></span></code></pre>
+<hr/>
+<h2 id="windows-setup">Windows Setup</h2>
+<h3 id="step-1-install-python">Step 1: Install Python</h3>
+<ol>
+<li>
+<p><strong>Download Python:</strong></p>
+<ul>
+<li>Go to <a href="https://python.org/downloads/">https://python.org/downloads/</a></li>
+<li>Download latest Python 3.x for Windows</li>
+<li><strong>Important:</strong> Check “Add Python to PATH” during installation</li>
+</ul>
+</li>
+<li>
+<p><strong>Alternative - Using winget:</strong></p>
+</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="cmd"><code><span class="line"><span style="color:#E1E4E8"># Install using Windows Package Manager</span></span>
+<span class="line"><span style="color:#E1E4E8">winget install Python.Python</span><span style="color:#79B8FF">.3</span></span></code></pre>
+<h3 id="step-2-verify-installation">Step 2: Verify Installation</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="cmd"><code><span class="line"><span style="color:#E1E4E8"># Open Command Prompt </span><span style="color:#F97583">or</span><span style="color:#E1E4E8"> PowerShell</span></span>
+<span class="line"><span style="color:#E1E4E8">python </span><span style="color:#F97583">--</span><span style="color:#E1E4E8">version</span></span>
+<span class="line"><span style="color:#E1E4E8">pip </span><span style="color:#F97583">--</span><span style="color:#E1E4E8">version</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8"># </span><span style="color:#F97583">If</span><span style="color:#E1E4E8"> python command doesn</span><span style="color:#6A737D">&#39;t work, try:</span></span>
+<span class="line"><span style="color:#E1E4E8">python3 </span><span style="color:#F97583">--</span><span style="color:#E1E4E8">version</span></span>
+<span class="line"><span style="color:#E1E4E8">py </span><span style="color:#F97583">--</span><span style="color:#E1E4E8">version</span></span></code></pre>
+<h3 id="step-3-create-virtual-environment-1">Step 3: Create Virtual Environment</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="cmd"><code><span class="line"><span style="color:#E1E4E8"># Create project directory</span></span>
+<span class="line"><span style="color:#E1E4E8">mkdir business</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">web</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">app</span></span>
+<span class="line"><span style="color:#E1E4E8">cd business</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">web</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">app</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8"># Create virtual environment</span></span>
+<span class="line"><span style="color:#E1E4E8">python </span><span style="color:#F97583">-</span><span style="color:#E1E4E8">m venv venv</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8"># Activate virtual environment</span></span>
+<span class="line"><span style="color:#E1E4E8">venv\Scripts\activate</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8"># Verify activation (should show (venv) </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> prompt)</span></span>
+<span class="line"><span style="color:#E1E4E8">where python</span></span></code></pre>
+<h3 id="step-4-install-essential-packages-1">Step 4: Install Essential Packages</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="cmd"><code><span class="line"><span style="color:#E1E4E8"># Upgrade pip</span></span>
+<span class="line"><span style="color:#E1E4E8">python </span><span style="color:#F97583">-</span><span style="color:#E1E4E8">m pip install </span><span style="color:#F97583">--</span><span style="color:#E1E4E8">upgrade pip</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8"># Install Jupyter </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> essential libraries</span></span>
+<span class="line"><span style="color:#E1E4E8">pip install jupyter jupyterlab</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8"># Install web development packages</span></span>
+<span class="line"><span style="color:#E1E4E8">pip install flask django fastapi streamlit</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8"># Install data science packages</span></span>
+<span class="line"><span style="color:#E1E4E8">pip install pandas </span><span style="color:#79B8FF">numpy</span><span style="color:#E1E4E8"> matplotlib seaborn plotly</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8"># Install database packages</span></span>
+<span class="line"><span style="color:#E1E4E8">pip install sqlalchemy psycopg2</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">binary pymongo</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8"># Install additional utilities</span></span>
+<span class="line"><span style="color:#E1E4E8">pip install requests beautifulsoup4 python</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">dotenv</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8"># Save requirements</span></span>
+<span class="line"><span style="color:#E1E4E8">pip freeze </span><span style="color:#F97583">&gt;</span><span style="color:#E1E4E8"> requirements.txt</span></span></code></pre>
+<h3 id="step-5-launch-jupyter-1">Step 5: Launch Jupyter</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="cmd"><code><span class="line"><span style="color:#E1E4E8"># Start Jupyter Lab</span></span>
+<span class="line"><span style="color:#E1E4E8">jupyter lab</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8"># </span><span style="color:#F97583">Or</span><span style="color:#E1E4E8"> start classic Jupyter Notebook</span></span>
+<span class="line"><span style="color:#E1E4E8">jupyter notebook</span></span></code></pre>
+<hr/>
+<h2 id="wsl-setup">WSL Setup</h2>
+<h3 id="step-1-install-wsl">Step 1: Install WSL</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="powershell"><code><span class="line"><span style="color:#6A737D"># Run in PowerShell as Administrator</span></span>
+<span class="line"><span style="color:#E1E4E8">wsl </span><span style="color:#F97583">--</span><span style="color:#E1E4E8">install</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Restart computer when prompted</span></span>
+<span class="line"><span style="color:#6A737D"># Set up Ubuntu username and password</span></span></code></pre>
+<h3 id="step-2-update-ubuntu-in-wsl">Step 2: Update Ubuntu in WSL</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Update package lists</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt</span><span style="color:#9ECBFF"> update</span><span style="color:#E1E4E8"> &amp;&amp; </span><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt</span><span style="color:#9ECBFF"> upgrade</span><span style="color:#79B8FF"> -y</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install essential tools</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -y</span><span style="color:#9ECBFF"> build-essential</span><span style="color:#9ECBFF"> curl</span><span style="color:#9ECBFF"> git</span></span></code></pre>
+<h3 id="step-3-install-python">Step 3: Install Python</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install Python and pip</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -y</span><span style="color:#9ECBFF"> python3</span><span style="color:#9ECBFF"> python3-pip</span><span style="color:#9ECBFF"> python3-venv</span><span style="color:#9ECBFF"> python3-dev</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Verify installation</span></span>
+<span class="line"><span style="color:#B392F0">python3</span><span style="color:#79B8FF"> --version</span></span>
+<span class="line"><span style="color:#B392F0">pip3</span><span style="color:#79B8FF"> --version</span></span></code></pre>
+<h3 id="step-4-create-virtual-environment">Step 4: Create Virtual Environment</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Create project directory</span></span>
+<span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#9ECBFF"> ~/business-web-app</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> ~/business-web-app</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Create virtual environment</span></span>
+<span class="line"><span style="color:#B392F0">python3</span><span style="color:#79B8FF"> -m</span><span style="color:#9ECBFF"> venv</span><span style="color:#9ECBFF"> venv</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Activate virtual environment</span></span>
+<span class="line"><span style="color:#79B8FF">source</span><span style="color:#9ECBFF"> venv/bin/activate</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Verify activation</span></span>
+<span class="line"><span style="color:#79B8FF">which</span><span style="color:#9ECBFF"> python</span></span></code></pre>
+<h3 id="step-5-install-essential-packages">Step 5: Install Essential Packages</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Upgrade pip</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> --upgrade</span><span style="color:#9ECBFF"> pip</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install Jupyter and essential libraries</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> jupyter</span><span style="color:#9ECBFF"> jupyterlab</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install web development packages</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> flask</span><span style="color:#9ECBFF"> django</span><span style="color:#9ECBFF"> fastapi</span><span style="color:#9ECBFF"> streamlit</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install data science packages</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> pandas</span><span style="color:#9ECBFF"> numpy</span><span style="color:#9ECBFF"> matplotlib</span><span style="color:#9ECBFF"> seaborn</span><span style="color:#9ECBFF"> plotly</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install database packages</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> sqlalchemy</span><span style="color:#9ECBFF"> psycopg2-binary</span><span style="color:#9ECBFF"> pymongo</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install additional utilities</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> requests</span><span style="color:#9ECBFF"> beautifulsoup4</span><span style="color:#9ECBFF"> python-dotenv</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Save requirements</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> freeze</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> requirements.txt</span></span></code></pre>
+<h3 id="step-6-launch-jupyter">Step 6: Launch Jupyter</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Start Jupyter Lab</span></span>
+<span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> lab</span><span style="color:#79B8FF"> --ip=0.0.0.0</span><span style="color:#79B8FF"> --port=8888</span><span style="color:#79B8FF"> --no-browser</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Access via Windows browser at: http://localhost:8888</span></span></code></pre>
+<hr/>
+<h2 id="linux-setup">Linux Setup</h2>
+<h3 id="step-1-update-system">Step 1: Update System</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Ubuntu/Debian</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt</span><span style="color:#9ECBFF"> update</span><span style="color:#E1E4E8"> &amp;&amp; </span><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt</span><span style="color:#9ECBFF"> upgrade</span><span style="color:#79B8FF"> -y</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># CentOS/RHEL/Fedora</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> dnf</span><span style="color:#9ECBFF"> update</span><span style="color:#79B8FF"> -y</span></span>
+<span class="line"><span style="color:#6A737D"># or for older versions: sudo yum update -y</span></span></code></pre>
+<h3 id="step-2-install-python-and-dependencies">Step 2: Install Python and Dependencies</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Ubuntu/Debian</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -y</span><span style="color:#9ECBFF"> python3</span><span style="color:#9ECBFF"> python3-pip</span><span style="color:#9ECBFF"> python3-venv</span><span style="color:#9ECBFF"> python3-dev</span><span style="color:#9ECBFF"> build-essential</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># CentOS/RHEL/Fedora</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> dnf</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -y</span><span style="color:#9ECBFF"> python3</span><span style="color:#9ECBFF"> python3-pip</span><span style="color:#9ECBFF"> python3-devel</span><span style="color:#9ECBFF"> gcc</span><span style="color:#9ECBFF"> gcc-c++</span><span style="color:#9ECBFF"> make</span></span></code></pre>
+<h3 id="step-3-create-virtual-environment-2">Step 3: Create Virtual Environment</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Create project directory</span></span>
+<span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#9ECBFF"> ~/business-web-app</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> ~/business-web-app</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Create virtual environment</span></span>
+<span class="line"><span style="color:#B392F0">python3</span><span style="color:#79B8FF"> -m</span><span style="color:#9ECBFF"> venv</span><span style="color:#9ECBFF"> venv</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Activate virtual environment</span></span>
+<span class="line"><span style="color:#79B8FF">source</span><span style="color:#9ECBFF"> venv/bin/activate</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Verify activation</span></span>
+<span class="line"><span style="color:#79B8FF">which</span><span style="color:#9ECBFF"> python</span></span></code></pre>
+<h3 id="step-4-install-essential-packages-2">Step 4: Install Essential Packages</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Upgrade pip</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> --upgrade</span><span style="color:#9ECBFF"> pip</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install Jupyter and essential libraries</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> jupyter</span><span style="color:#9ECBFF"> jupyterlab</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install web development packages</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> flask</span><span style="color:#9ECBFF"> django</span><span style="color:#9ECBFF"> fastapi</span><span style="color:#9ECBFF"> streamlit</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install data science packages</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> pandas</span><span style="color:#9ECBFF"> numpy</span><span style="color:#9ECBFF"> matplotlib</span><span style="color:#9ECBFF"> seaborn</span><span style="color:#9ECBFF"> plotly</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install database packages</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> sqlalchemy</span><span style="color:#9ECBFF"> psycopg2-binary</span><span style="color:#9ECBFF"> pymongo</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install additional utilities</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> requests</span><span style="color:#9ECBFF"> beautifulsoup4</span><span style="color:#9ECBFF"> python-dotenv</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Save requirements</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> freeze</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> requirements.txt</span></span></code></pre>
+<h3 id="step-5-launch-jupyter-2">Step 5: Launch Jupyter</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Start Jupyter Lab</span></span>
+<span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> lab</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Or start classic Jupyter Notebook</span></span>
+<span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> notebook</span></span></code></pre>
+<hr/>
+<h2 id="essential-libraries-for-business-web-applications">Essential Libraries for Business Web Applications</h2>
+<h3 id="core-web-frameworks">Core Web Frameworks</h3>
+<ul>
+<li><strong>Flask</strong>: Lightweight, flexible web framework</li>
+<li><strong>Django</strong>: Full-featured web framework with admin interface</li>
+<li><strong>FastAPI</strong>: Modern, fast API framework with automatic documentation</li>
+<li><strong>Streamlit</strong>: Rapid web app development for data science</li>
+</ul>
+<h3 id="data-handling">Data Handling</h3>
+<ul>
+<li><strong>Pandas</strong>: Data manipulation and analysis</li>
+<li><strong>NumPy</strong>: Numerical computing</li>
+<li><strong>SQLAlchemy</strong>: Database ORM</li>
+<li><strong>psycopg2</strong>: PostgreSQL adapter</li>
+<li><strong>pymongo</strong>: MongoDB driver</li>
+</ul>
+<h3 id="visualization">Visualization</h3>
+<ul>
+<li><strong>Matplotlib</strong>: Basic plotting</li>
+<li><strong>Seaborn</strong>: Statistical visualization</li>
+<li><strong>Plotly</strong>: Interactive visualizations</li>
+<li><strong>Bokeh</strong>: Interactive web visualizations</li>
+</ul>
+<h3 id="utilities">Utilities</h3>
+<ul>
+<li><strong>Requests</strong>: HTTP library</li>
+<li><strong>BeautifulSoup4</strong>: Web scraping</li>
+<li><strong>python-dotenv</strong>: Environment variable management</li>
+<li><strong>Celery</strong>: Task queue for background jobs</li>
+</ul>
+<h3 id="additional-business-tools">Additional Business Tools</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install additional business-focused packages</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> openpyxl</span><span style="color:#9ECBFF"> xlsxwriter</span><span style="color:#6A737D">  # Excel file handling</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> pillow</span><span style="color:#6A737D">              # Image processing</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> reportlab</span><span style="color:#6A737D">           # PDF generation</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> sendgrid</span><span style="color:#6A737D">            # Email services</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> stripe</span><span style="color:#6A737D">              # Payment processing</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> boto3</span><span style="color:#6A737D">               # AWS services</span></span></code></pre>
+<hr/>
+<h2 id="testing-your-setup">Testing Your Setup</h2>
+<h3 id="create-a-test-jupyter-notebook">Create a Test Jupyter Notebook</h3>
+<ol>
+<li><strong>Start Jupyter Lab:</strong></li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> lab</span></span></code></pre>
+<ol start="2">
+<li>
+<p><strong>Create new notebook:</strong> Click ”+” then select “Python 3”</p>
+</li>
+<li>
+<p><strong>Test basic functionality:</strong></p>
+</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Cell 1: Test imports</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> pandas </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> pd</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> numpy </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> np</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> matplotlib.pyplot </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> plt</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> plotly.express </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> px</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;All libraries imported successfully!&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Cell 2: Test data handling</span></span>
+<span class="line"><span style="color:#E1E4E8">df </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> pd.DataFrame({</span></span>
+<span class="line"><span style="color:#9ECBFF">    &#39;x&#39;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">range</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#9ECBFF">    &#39;y&#39;</span><span style="color:#E1E4E8">: np.random.randn(</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(df.head())</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Cell 3: Test visualization</span></span>
+<span class="line"><span style="color:#E1E4E8">plt.figure(</span><span style="color:#FFAB70">figsize</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">))</span></span>
+<span class="line"><span style="color:#E1E4E8">plt.plot(df[</span><span style="color:#9ECBFF">&#39;x&#39;</span><span style="color:#E1E4E8">], df[</span><span style="color:#9ECBFF">&#39;y&#39;</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#E1E4E8">plt.title(</span><span style="color:#9ECBFF">&#39;Test Plot&#39;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">plt.show()</span></span></code></pre>
+<h3 id="test-web-framework">Test Web Framework</h3>
+<p>Create a simple Flask app:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># In Jupyter cell or separate file</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> flask </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Flask</span></span>
+<span class="line"><span style="color:#E1E4E8">app </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Flask(</span><span style="color:#79B8FF">__name__</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@app.route</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&#39;/&#39;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">def</span><span style="color:#B392F0"> hello</span><span style="color:#E1E4E8">():</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#9ECBFF"> &#39;&lt;h1&gt;Hello, Business Web App!&lt;/h1&gt;&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#79B8FF"> __name__</span><span style="color:#F97583"> ==</span><span style="color:#9ECBFF"> &#39;__main__&#39;</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    app.run(</span><span style="color:#FFAB70">debug</span><span style="color:#F97583">=</span><span style="color:#79B8FF">True</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">port</span><span style="color:#F97583">=</span><span style="color:#79B8FF">5000</span><span style="color:#E1E4E8">)</span></span></code></pre>
+<hr/>
+<h2 id="creating-your-first-business-web-app">Creating Your First Business Web App</h2>
+<h3 id="simple-streamlit-dashboard">Simple Streamlit Dashboard</h3>
+<p>Create file <code>dashboard.py</code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> streamlit </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> st</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> pandas </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> pd</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> plotly.express </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> px</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">st.title(</span><span style="color:#9ECBFF">&#39;Business Dashboard&#39;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Sample data</span></span>
+<span class="line"><span style="color:#E1E4E8">data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> pd.DataFrame({</span></span>
+<span class="line"><span style="color:#9ECBFF">    &#39;Month&#39;</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">&#39;Jan&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&#39;Feb&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&#39;Mar&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&#39;Apr&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&#39;May&#39;</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#9ECBFF">    &#39;Revenue&#39;</span><span style="color:#E1E4E8">: [</span><span style="color:#79B8FF">10000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">12000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">15000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">11000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">18000</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#9ECBFF">    &#39;Expenses&#39;</span><span style="color:#E1E4E8">: [</span><span style="color:#79B8FF">8000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">9000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">8500</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">12000</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Display metrics</span></span>
+<span class="line"><span style="color:#E1E4E8">col1, col2, col3 </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> st.columns(</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">with</span><span style="color:#E1E4E8"> col1:</span></span>
+<span class="line"><span style="color:#E1E4E8">    st.metric(</span><span style="color:#9ECBFF">&#39;Total Revenue&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">&quot;$</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">data[</span><span style="color:#9ECBFF">&#39;Revenue&#39;</span><span style="color:#E1E4E8">].sum()</span><span style="color:#F97583">:,</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">with</span><span style="color:#E1E4E8"> col2:</span></span>
+<span class="line"><span style="color:#E1E4E8">    st.metric(</span><span style="color:#9ECBFF">&#39;Total Expenses&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">&quot;$</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">data[</span><span style="color:#9ECBFF">&#39;Expenses&#39;</span><span style="color:#E1E4E8">].sum()</span><span style="color:#F97583">:,</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">with</span><span style="color:#E1E4E8"> col3:</span></span>
+<span class="line"><span style="color:#E1E4E8">    profit </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> data[</span><span style="color:#9ECBFF">&#39;Revenue&#39;</span><span style="color:#E1E4E8">].sum() </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> data[</span><span style="color:#9ECBFF">&#39;Expenses&#39;</span><span style="color:#E1E4E8">].sum()</span></span>
+<span class="line"><span style="color:#E1E4E8">    st.metric(</span><span style="color:#9ECBFF">&#39;Net Profit&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">&quot;$</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">profit</span><span style="color:#F97583">:,</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Display chart</span></span>
+<span class="line"><span style="color:#E1E4E8">fig </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> px.line(data, </span><span style="color:#FFAB70">x</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&#39;Month&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">y</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">&#39;Revenue&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&#39;Expenses&#39;</span><span style="color:#E1E4E8">], </span></span>
+<span class="line"><span style="color:#FFAB70">              title</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&#39;Revenue vs Expenses&#39;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">st.plotly_chart(fig)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Display data table</span></span>
+<span class="line"><span style="color:#E1E4E8">st.subheader(</span><span style="color:#9ECBFF">&#39;Raw Data&#39;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">st.dataframe(data)</span></span></code></pre>
+<p>Run with:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">streamlit</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> dashboard.py</span></span></code></pre>
+<h3 id="project-structure">Project Structure</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>business-web-app/</span></span>
+<span class="line"><span>├── venv/                 # Virtual environment</span></span>
+<span class="line"><span>├── notebooks/            # Jupyter notebooks</span></span>
+<span class="line"><span>├── src/                  # Source code</span></span>
+<span class="line"><span>├── data/                 # Data files</span></span>
+<span class="line"><span>├── templates/            # HTML templates</span></span>
+<span class="line"><span>├── static/               # CSS, JS, images</span></span>
+<span class="line"><span>├── requirements.txt      # Dependencies</span></span>
+<span class="line"><span>├── .env                  # Environment variables</span></span>
+<span class="line"><span>└── README.md            # Project documentation</span></span></code></pre>
+<h3 id="best-practices">Best Practices</h3>
+<ol>
+<li><strong>Always use virtual environments</strong></li>
+<li><strong>Keep requirements.txt updated</strong></li>
+<li><strong>Use .env files for sensitive data</strong></li>
+<li><strong>Version control with Git</strong></li>
+<li><strong>Document your code</strong></li>
+<li><strong>Test your applications</strong></li>
+</ol>
+<hr/>
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+<h3 id="permission-errors">Permission Errors</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Use --user flag if needed</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> --user</span><span style="color:#9ECBFF"> package_name</span></span></code></pre>
+<h3 id="command-not-found">Command Not Found</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Make sure virtual environment is activated</span></span>
+<span class="line"><span style="color:#6A737D"># Check PATH includes Python scripts directory</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> $PATH </span><span style="color:#F97583">|</span><span style="color:#B392F0"> grep</span><span style="color:#9ECBFF"> python</span></span></code></pre>
+<h3 id="module-import-errors">Module Import Errors</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Verify package installation</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> list</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> grep</span><span style="color:#9ECBFF"> package_name</span></span>
+<span class="line"><span style="color:#6A737D"># Reinstall if necessary</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> --force-reinstall</span><span style="color:#9ECBFF"> package_name</span></span></code></pre>
+<h3 id="port-already-in-use">Port Already in Use</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Kill process using port (Linux/macOS)</span></span>
+<span class="line"><span style="color:#B392F0">lsof</span><span style="color:#79B8FF"> -ti:8888</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> xargs</span><span style="color:#9ECBFF"> kill</span><span style="color:#79B8FF"> -9</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Windows</span></span>
+<span class="line"><span style="color:#B392F0">netstat</span><span style="color:#79B8FF"> -ano</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> findstr</span><span style="color:#9ECBFF"> :8888</span></span>
+<span class="line"><span style="color:#B392F0">taskkill</span><span style="color:#9ECBFF"> /PID</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">PI</span><span style="color:#E1E4E8">D</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF"> /F</span></span></code></pre>
+<p>This setup provides a solid foundation for developing business web applications with Python and Jupyter Notebooks, we will discuss essential libraries across all major platforms in more depth in the coming days. Also, the face of AI development changes day to day and we will be updating this as we go along.</p>
+<h1 id="sidebar">Sidebar</h1>
+<p>We will iterate on VSCode extensions and Python libraries throughout our
+adventure, culminating with an “ideal” set of configurations, etc. Much of what is here is tested on MacOs Sequoia, yet the other OS versions are covered. Adjustments might need to be made for Windows, WSL or Linux. This is a technical setup day, so don’t worry if you don’t understand everything. We will be using these tools throughout the course, and you will become familiar with them as we go along.
+The goal is to get you up and running with a solid development environment that will support your learning and projects.</p> </div>  </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2025 Two Agentic Dudes. All rights reserved.
+<div class="social-links" data-astro-cid-sz7xmlte> <a href="https://discord.gg/RYF58mGfbg" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Go to our Discord server</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="28" astro-icon="social/discord" data-astro-cid-sz7xmlte> <path fill="currentColor" d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" data-astro-cid-sz7xmlte></path> </svg> </a> <a href="https://bsky.app/profile/42daysofai.com" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Go to Bluesky</span> <svg role="img" viewBox="0 0 24 24" aria-hidden="true" width="32" height="28" xmlns="http://www.w3.org/2000/svg" data-astro-cid-sz7xmlte> <title>Bluesky</title> <path fill="currentColor" d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z" data-astro-cid-sz7xmlte></path> </svg> </a> <a href="https://github.com/42DaysOfAI" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Go to 42DaysOfAI GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="24" astro-icon="social/github" data-astro-cid-sz7xmlte><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-sz7xmlte></path></svg> </a> </div> </footer>  </body></html>
