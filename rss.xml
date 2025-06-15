@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>42 Days of AI</title><description>Welcome to you AI adventure!</description><link>https://42daysofai.com/</link><item><title>Content Outline</title><link>https://42daysofai.com/days/content-outline/</link><guid isPermaLink="true">https://42daysofai.com/days/content-outline/</guid><description>Evolving (high-level) outline of the content we envision for our 42 days of AI.
+</description></item><item><title>Day 2: First AI App</title><link>https://42daysofai.com/days/day-2/</link><guid isPermaLink="true">https://42daysofai.com/days/day-2/</guid><description>• Validate the Python/AI libraries 
+• &apos;Hello AI&apos;, our first program using AI APIs. 
+• SIDEBAR: Quick tour of the current state-of-the-art of the AI tooling landscape.
+• RESOURCES: Links to related articles/videos.
 </description></item><item><title>Day 1: Dev Environment Setup</title><link>https://42daysofai.com/days/day-1/</link><guid isPermaLink="true">https://42daysofai.com/days/day-1/</guid><description>• VSCode configuration for Python 
 • Essential VSCode extensions
 • Python libraries
@@ -7,18 +11,14 @@
 • NOTE: Even if you are an experienced developer, you will benefit from the VSCode and AI libraries details
 • SIDEBAR: Preview of the Capstone project
 • RESOURCES: References to dive deeper on today&apos;s topics/tools.
-</description></item><item><title>Day 2: First AI App</title><link>https://42daysofai.com/days/day-2/</link><guid isPermaLink="true">https://42daysofai.com/days/day-2/</guid><description>• Validate the Python/AI libraries 
-• &apos;Hello AI&apos;, our first program using AI APIs. 
-• SIDEBAR: Quick tour of the current state-of-the-art of the AI tooling landscape.
-• RESOURCES: Links to related articles/videos.
-</description></item><item><title>Day 3: AI Prompt Engineering, Part 1</title><link>https://42daysofai.com/days/day-3/</link><guid isPermaLink="true">https://42daysofai.com/days/day-3/</guid><description>• Prompt Engineering: Getting the LLM to do what you want.
-• Multiple examples of best and worst prompt practices (using ChatGPT free).
-• SIDEBAR: I didn&apos;t used to know how to spell &quot;prompt engineer.&quot; Now I are one.
-• RESOURCES: Prompt engineering/vibe coding &quot;greatest hits&quot; articles list.
 </description></item><item><title>Day 4: AI Prompt Engineering, Part 2</title><link>https://42daysofai.com/days/day-4/</link><guid isPermaLink="true">https://42daysofai.com/days/day-4/</guid><description>• Invoke a LLM using a chat-like prompt via its API. (Example: 
 &apos;How would you go about designing a program that keeps itself updated as
 the underlying technology evolves.&apos;)
 • This will be the outline we use to have AI help us build this.
 • SIDEBAR: Local/open-source LLMs vs. commercial APIs. Things to think about for when we deploy
 (and need to pay for running) our AI applications in the real world.
+</description></item><item><title>Day 3: AI Prompt Engineering, Part 1</title><link>https://42daysofai.com/days/day-3/</link><guid isPermaLink="true">https://42daysofai.com/days/day-3/</guid><description>• Prompt Engineering: Getting the LLM to do what you want.
+• Multiple examples of best and worst prompt practices (using ChatGPT free).
+• SIDEBAR: I didn&apos;t used to know how to spell &quot;prompt engineer.&quot; Now I are one.
+• RESOURCES: Prompt engineering/vibe coding &quot;greatest hits&quot; articles list.
 </description></item></channel></rss>
