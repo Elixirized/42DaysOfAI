@@ -70,11 +70,10 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <ol>
 <li><a href="#macos-setup">macOS Setup</a></li>
 <li><a href="#windows-setup">Windows Setup</a></li>
-<li><a href="#wsl-setup">WSL (Windows Subsystem for Linux) Setup</a></li>
 <li><a href="#linux-setup">Linux Setup</a></li>
-<li><a href="#essential-libraries">Essential Libraries for Business Web Apps</a></li>
-<li><a href="#testing-setup">Testing Your Setup</a></li>
-<li><a href="#first-web-app">Creating Your First Business Web App</a></li>
+<li><a href="#essential-libraries">Essential Libraries</a></li>
+<li><a href="#testing-setup">Testing Setup</a></li>
+<li><a href="#first-web-app">First Web App</a></li>
 </ol>
 <hr/>
 <h2 id="macos-setup">macOS Setup</h2>
@@ -139,90 +138,34 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <h2 id="windows-setup">Windows Setup</h2>
 <h3 id="step-1-install-python">Step 1: Install Python</h3>
 <ol>
-<li>
-<p><strong>Download Python:</strong></p>
+<li><strong>Download Python:</strong>
 <ul>
 <li>Go to <a href="https://python.org/downloads/">https://python.org/downloads/</a></li>
 <li>Download latest Python 3.x for Windows</li>
 <li><strong>Important:</strong> Check “Add Python to PATH” during installation</li>
 </ul>
 </li>
-<li>
-<p><strong>Alternative - Using winget:</strong></p>
-</li>
 </ol>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="cmd"><code><span class="line"><span style="color:#E1E4E8"># Install using Windows Package Manager</span></span>
-<span class="line"><span style="color:#E1E4E8">winget install Python.Python</span><span style="color:#79B8FF">.3</span></span></code></pre>
-<h3 id="step-2-verify-installation">Step 2: Verify Installation</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="cmd"><code><span class="line"><span style="color:#E1E4E8"># Open Command Prompt </span><span style="color:#F97583">or</span><span style="color:#E1E4E8"> PowerShell</span></span>
-<span class="line"><span style="color:#E1E4E8">python </span><span style="color:#F97583">--</span><span style="color:#E1E4E8">version</span></span>
-<span class="line"><span style="color:#E1E4E8">pip </span><span style="color:#F97583">--</span><span style="color:#E1E4E8">version</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8"># </span><span style="color:#F97583">If</span><span style="color:#E1E4E8"> python command doesn</span><span style="color:#6A737D">&#39;t work, try:</span></span>
-<span class="line"><span style="color:#E1E4E8">python3 </span><span style="color:#F97583">--</span><span style="color:#E1E4E8">version</span></span>
-<span class="line"><span style="color:#E1E4E8">py </span><span style="color:#F97583">--</span><span style="color:#E1E4E8">version</span></span></code></pre>
-<h3 id="step-3-create-virtual-environment-1">Step 3: Create Virtual Environment</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="cmd"><code><span class="line"><span style="color:#E1E4E8"># Create project directory</span></span>
-<span class="line"><span style="color:#E1E4E8">mkdir business</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">web</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">app</span></span>
-<span class="line"><span style="color:#E1E4E8">cd business</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">web</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">app</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8"># Create virtual environment</span></span>
-<span class="line"><span style="color:#E1E4E8">python </span><span style="color:#F97583">-</span><span style="color:#E1E4E8">m venv venv</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8"># Activate virtual environment</span></span>
-<span class="line"><span style="color:#E1E4E8">venv\Scripts\activate</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8"># Verify activation (should show (venv) </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> prompt)</span></span>
-<span class="line"><span style="color:#E1E4E8">where python</span></span></code></pre>
-<h3 id="step-4-install-essential-packages-1">Step 4: Install Essential Packages</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="cmd"><code><span class="line"><span style="color:#E1E4E8"># Upgrade pip</span></span>
-<span class="line"><span style="color:#E1E4E8">python </span><span style="color:#F97583">-</span><span style="color:#E1E4E8">m pip install </span><span style="color:#F97583">--</span><span style="color:#E1E4E8">upgrade pip</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8"># Install Jupyter </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> essential libraries</span></span>
-<span class="line"><span style="color:#E1E4E8">pip install jupyter jupyterlab</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8"># Install web development packages</span></span>
-<span class="line"><span style="color:#E1E4E8">pip install flask django fastapi streamlit</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8"># Install data science packages</span></span>
-<span class="line"><span style="color:#E1E4E8">pip install pandas </span><span style="color:#79B8FF">numpy</span><span style="color:#E1E4E8"> matplotlib seaborn plotly</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8"># Install database packages</span></span>
-<span class="line"><span style="color:#E1E4E8">pip install sqlalchemy psycopg2</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">binary pymongo</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8"># Install additional utilities</span></span>
-<span class="line"><span style="color:#E1E4E8">pip install requests beautifulsoup4 python</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">dotenv</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8"># Save requirements</span></span>
-<span class="line"><span style="color:#E1E4E8">pip freeze </span><span style="color:#F97583">&gt;</span><span style="color:#E1E4E8"> requirements.txt</span></span></code></pre>
-<h3 id="step-5-launch-jupyter-1">Step 5: Launch Jupyter</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="cmd"><code><span class="line"><span style="color:#E1E4E8"># Start Jupyter Lab</span></span>
-<span class="line"><span style="color:#E1E4E8">jupyter lab</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8"># </span><span style="color:#F97583">Or</span><span style="color:#E1E4E8"> start classic Jupyter Notebook</span></span>
-<span class="line"><span style="color:#E1E4E8">jupyter notebook</span></span></code></pre>
-<hr/>
-<h2 id="wsl-setup">WSL Setup</h2>
-<h3 id="step-1-install-wsl">Step 1: Install WSL</h3>
+<h3 id="step-2-install-wsl">Step 2: Install WSL</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="powershell"><code><span class="line"><span style="color:#6A737D"># Run in PowerShell as Administrator</span></span>
 <span class="line"><span style="color:#E1E4E8">wsl </span><span style="color:#F97583">--</span><span style="color:#E1E4E8">install</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># Restart computer when prompted</span></span>
 <span class="line"><span style="color:#6A737D"># Set up Ubuntu username and password</span></span></code></pre>
-<h3 id="step-2-update-ubuntu-in-wsl">Step 2: Update Ubuntu in WSL</h3>
+<h3 id="step-3-update-ubuntu-in-wsl">Step 3: Update Ubuntu in WSL</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Update package lists</span></span>
 <span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt</span><span style="color:#9ECBFF"> update</span><span style="color:#E1E4E8"> &amp;&amp; </span><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt</span><span style="color:#9ECBFF"> upgrade</span><span style="color:#79B8FF"> -y</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># Install essential tools</span></span>
 <span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -y</span><span style="color:#9ECBFF"> build-essential</span><span style="color:#9ECBFF"> curl</span><span style="color:#9ECBFF"> git</span></span></code></pre>
-<h3 id="step-3-install-python">Step 3: Install Python</h3>
+<h3 id="step-4-install-python">Step 4: Install Python</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install Python and pip</span></span>
 <span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -y</span><span style="color:#9ECBFF"> python3</span><span style="color:#9ECBFF"> python3-pip</span><span style="color:#9ECBFF"> python3-venv</span><span style="color:#9ECBFF"> python3-dev</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># Verify installation</span></span>
 <span class="line"><span style="color:#B392F0">python3</span><span style="color:#79B8FF"> --version</span></span>
 <span class="line"><span style="color:#B392F0">pip3</span><span style="color:#79B8FF"> --version</span></span></code></pre>
-<h3 id="step-4-create-virtual-environment">Step 4: Create Virtual Environment</h3>
+<h3 id="step-5-create-virtual-environment">Step 5: Create Virtual Environment</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Create project directory</span></span>
 <span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#9ECBFF"> ~/business-web-app</span></span>
 <span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> ~/business-web-app</span></span>
@@ -235,7 +178,7 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># Verify activation</span></span>
 <span class="line"><span style="color:#79B8FF">which</span><span style="color:#9ECBFF"> python</span></span></code></pre>
-<h3 id="step-5-install-essential-packages">Step 5: Install Essential Packages</h3>
+<h3 id="step-6-install-essential-packages">Step 6 Install Essential Packages</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Upgrade pip</span></span>
 <span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> --upgrade</span><span style="color:#9ECBFF"> pip</span></span>
 <span class="line"></span>
@@ -256,7 +199,7 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># Save requirements</span></span>
 <span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> freeze</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> requirements.txt</span></span></code></pre>
-<h3 id="step-6-launch-jupyter">Step 6: Launch Jupyter</h3>
+<h3 id="step-7-launch-jupyter">Step 7: Launch Jupyter</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Start Jupyter Lab</span></span>
 <span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> lab</span><span style="color:#79B8FF"> --ip=0.0.0.0</span><span style="color:#79B8FF"> --port=8888</span><span style="color:#79B8FF"> --no-browser</span></span>
 <span class="line"></span>
@@ -276,7 +219,7 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># CentOS/RHEL/Fedora</span></span>
 <span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> dnf</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -y</span><span style="color:#9ECBFF"> python3</span><span style="color:#9ECBFF"> python3-pip</span><span style="color:#9ECBFF"> python3-devel</span><span style="color:#9ECBFF"> gcc</span><span style="color:#9ECBFF"> gcc-c++</span><span style="color:#9ECBFF"> make</span></span></code></pre>
-<h3 id="step-3-create-virtual-environment-2">Step 3: Create Virtual Environment</h3>
+<h3 id="step-3-create-virtual-environment-1">Step 3: Create Virtual Environment</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Create project directory</span></span>
 <span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#9ECBFF"> ~/business-web-app</span></span>
 <span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> ~/business-web-app</span></span>
@@ -289,7 +232,7 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># Verify activation</span></span>
 <span class="line"><span style="color:#79B8FF">which</span><span style="color:#9ECBFF"> python</span></span></code></pre>
-<h3 id="step-4-install-essential-packages-2">Step 4: Install Essential Packages</h3>
+<h3 id="step-4-install-essential-packages-1">Step 4: Install Essential Packages</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Upgrade pip</span></span>
 <span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> --upgrade</span><span style="color:#9ECBFF"> pip</span></span>
 <span class="line"></span>
@@ -310,14 +253,14 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># Save requirements</span></span>
 <span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> freeze</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> requirements.txt</span></span></code></pre>
-<h3 id="step-5-launch-jupyter-2">Step 5: Launch Jupyter</h3>
+<h3 id="step-5-launch-jupyter-1">Step 5: Launch Jupyter</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Start Jupyter Lab</span></span>
 <span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> lab</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># Or start classic Jupyter Notebook</span></span>
 <span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> notebook</span></span></code></pre>
 <hr/>
-<h2 id="essential-libraries-for-business-web-applications">Essential Libraries for Business Web Applications</h2>
+<h2 id="essential-libraries">Essential Libraries</h2>
 <h3 id="core-web-frameworks">Core Web Frameworks</h3>
 <ul>
 <li><strong>Flask</strong>: Lightweight, flexible web framework</li>
@@ -356,7 +299,7 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> stripe</span><span style="color:#6A737D">              # Payment processing</span></span>
 <span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> boto3</span><span style="color:#6A737D">               # AWS services</span></span></code></pre>
 <hr/>
-<h2 id="testing-your-setup">Testing Your Setup</h2>
+<h2 id="testing-setup">Testing Setup</h2>
 <h3 id="create-a-test-jupyter-notebook">Create a Test Jupyter Notebook</h3>
 <ol>
 <li><strong>Start Jupyter Lab:</strong></li>
@@ -402,7 +345,7 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <span class="line"><span style="color:#F97583">if</span><span style="color:#79B8FF"> __name__</span><span style="color:#F97583"> ==</span><span style="color:#9ECBFF"> &#39;__main__&#39;</span><span style="color:#E1E4E8">:</span></span>
 <span class="line"><span style="color:#E1E4E8">    app.run(</span><span style="color:#FFAB70">debug</span><span style="color:#F97583">=</span><span style="color:#79B8FF">True</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">port</span><span style="color:#F97583">=</span><span style="color:#79B8FF">5000</span><span style="color:#E1E4E8">)</span></span></code></pre>
 <hr/>
-<h2 id="creating-your-first-business-web-app">Creating Your First Business Web App</h2>
+<h2 id="first-web-app">First Web App</h2>
 <h3 id="simple-streamlit-dashboard">Simple Streamlit Dashboard</h3>
 <p>Create file <code>dashboard.py</code>:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> streamlit </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> st</span></span>
