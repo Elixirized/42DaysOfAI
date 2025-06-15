@@ -67,11 +67,10 @@ There are many more extensions available in the VSCode marketplace, but these ar
 ## Table of Contents
 1. [macOS Setup](#macos-setup)
 2. [Windows Setup](#windows-setup)
-3. [WSL (Windows Subsystem for Linux) Setup](#wsl-setup)
-4. [Linux Setup](#linux-setup)
-5. [Essential Libraries for Business Web Apps](#essential-libraries)
-6. [Testing Your Setup](#testing-setup) 
-7. [Creating Your First Business Web App](#first-web-app)
+3. [Linux Setup](#linux-setup)
+4. [Essential Libraries](#essential-libraries)
+5. [Testing Setup](#testing-setup)
+6. [First Web App](#first-web-app)
 
 ---
 
@@ -159,77 +158,8 @@ jupyter notebook
    - Download latest Python 3.x for Windows
    - **Important:** Check "Add Python to PATH" during installation
 
-2. **Alternative - Using winget:**
-```cmd
-# Install using Windows Package Manager
-winget install Python.Python.3
-```
 
-### Step 2: Verify Installation
-```cmd
-# Open Command Prompt or PowerShell
-python --version
-pip --version
-
-# If python command doesn't work, try:
-python3 --version
-py --version
-```
-
-### Step 3: Create Virtual Environment
-```cmd
-# Create project directory
-mkdir business-web-app
-cd business-web-app
-
-# Create virtual environment
-python -m venv venv
-
-# Activate virtual environment
-venv\Scripts\activate
-
-# Verify activation (should show (venv) in prompt)
-where python
-```
-
-### Step 4: Install Essential Packages
-```cmd
-# Upgrade pip
-python -m pip install --upgrade pip
-
-# Install Jupyter and essential libraries
-pip install jupyter jupyterlab
-
-# Install web development packages
-pip install flask django fastapi streamlit
-
-# Install data science packages
-pip install pandas numpy matplotlib seaborn plotly
-
-# Install database packages
-pip install sqlalchemy psycopg2-binary pymongo
-
-# Install additional utilities
-pip install requests beautifulsoup4 python-dotenv
-
-# Save requirements
-pip freeze > requirements.txt
-```
-
-### Step 5: Launch Jupyter
-```cmd
-# Start Jupyter Lab
-jupyter lab
-
-# Or start classic Jupyter Notebook
-jupyter notebook
-```
-
----
-
-## WSL Setup
-
-### Step 1: Install WSL
+### Step 2: Install WSL
 ```powershell
 # Run in PowerShell as Administrator
 wsl --install
@@ -238,7 +168,7 @@ wsl --install
 # Set up Ubuntu username and password
 ```
 
-### Step 2: Update Ubuntu in WSL
+### Step 3: Update Ubuntu in WSL
 ```bash
 # Update package lists
 sudo apt update && sudo apt upgrade -y
@@ -247,7 +177,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y build-essential curl git
 ```
 
-### Step 3: Install Python
+### Step 4: Install Python
 ```bash
 # Install Python and pip
 sudo apt install -y python3 python3-pip python3-venv python3-dev
@@ -257,7 +187,7 @@ python3 --version
 pip3 --version
 ```
 
-### Step 4: Create Virtual Environment
+### Step 5: Create Virtual Environment
 ```bash
 # Create project directory
 mkdir ~/business-web-app
@@ -273,7 +203,7 @@ source venv/bin/activate
 which python
 ```
 
-### Step 5: Install Essential Packages
+### Step 6 Install Essential Packages
 ```bash
 # Upgrade pip
 pip install --upgrade pip
@@ -297,7 +227,7 @@ pip install requests beautifulsoup4 python-dotenv
 pip freeze > requirements.txt
 ```
 
-### Step 6: Launch Jupyter
+### Step 7: Launch Jupyter
 ```bash
 # Start Jupyter Lab
 jupyter lab --ip=0.0.0.0 --port=8888 --no-browser
@@ -379,7 +309,7 @@ jupyter notebook
 
 ---
 
-## Essential Libraries for Business Web Applications
+## Essential Libraries
 
 ### Core Web Frameworks
 - **Flask**: Lightweight, flexible web framework
@@ -419,7 +349,7 @@ pip install boto3               # AWS services
 
 ---
 
-## Testing Your Setup
+## Testing Setup
 
 ### Create a Test Jupyter Notebook
 1. **Start Jupyter Lab:**
@@ -469,7 +399,7 @@ if __name__ == '__main__':
 
 ---
 
-## Creating Your First Business Web App
+## First Web App
 
 ### Simple Streamlit Dashboard
 Create file `dashboard.py`:
