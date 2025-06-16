@@ -23,12 +23,14 @@ The Command Palette in VS Code is a powerful feature that allows you to quickly 
 commands and features by typing their names. It's like a shortcut hub for all the actions
 within the editor.
 
+![Keyboard shortcut for opening the Command Palette in VSCode on Mac showing three keys: cmd with the command symbol, shift with an upward arrow, and P in bold. Plus signs connect the keys. Below the keys is the label Command Palette in gray text. The design is clean and modern with a neutral tone.](../../../public/images/command-palette-photo.png)
+
 To open it, press Ctrl+Shift+P (or Cmd+Shift+P on Mac), and start typing your command. It's
 awesome because it speeds up your workflow by letting you jump to any function without
 navigating through menus or remembering keyboard shortcuts.
 
 
-![Screenshot of the VSCode Command Palette open with the text Python Select Interpreter highlighted in the input box. The surrounding VSCode interface is visible with a dark theme, showing the editor and sidebar. The mood is neutral and instructional.][def]
+![Screenshot of Command Palette in VSCode](../../../public/images/command-palette.png)
 
 # Install VSCode Extensions
 
@@ -118,6 +120,46 @@ which python
 ```
 
 ### Step 4: Install Essential Packages
+
+## Essential Libraries
+
+### Core Web Frameworks
+- **Flask**: Lightweight, flexible web framework
+- **Django**: Full-featured web framework with admin interface
+- **FastAPI**: Modern, fast API framework with automatic documentation
+- **Streamlit**: Rapid web app development for data science
+
+### Data Handling
+- **Pandas**: Data manipulation and analysis
+- **NumPy**: Numerical computing
+- **SQLAlchemy**: Database ORM
+- **psycopg2**: PostgreSQL adapter
+- **pymongo**: MongoDB driver
+
+### Visualization
+- **Matplotlib**: Basic plotting
+- **Seaborn**: Statistical visualization
+- **Plotly**: Interactive visualizations
+- **Bokeh**: Interactive web visualizations
+
+### Utilities
+- **Requests**: HTTP library
+- **BeautifulSoup4**: Web scraping
+- **python-dotenv**: Environment variable management
+- **Celery**: Task queue for background jobs
+
+### Additional Business Tools
+```bash
+# Install additional business-focused packages
+pip install openpyxl xlsxwriter  # Excel file handling
+pip install pillow              # Image processing
+pip install reportlab           # PDF generation
+pip install sendgrid            # Email services
+pip install stripe              # Payment processing
+pip install boto3               # AWS services
+```
+
+---
 ```bash
 # Upgrade pip first
 pip install --upgrade pip
@@ -311,45 +353,6 @@ jupyter notebook
 
 ---
 
-## Essential Libraries
-
-### Core Web Frameworks
-- **Flask**: Lightweight, flexible web framework
-- **Django**: Full-featured web framework with admin interface
-- **FastAPI**: Modern, fast API framework with automatic documentation
-- **Streamlit**: Rapid web app development for data science
-
-### Data Handling
-- **Pandas**: Data manipulation and analysis
-- **NumPy**: Numerical computing
-- **SQLAlchemy**: Database ORM
-- **psycopg2**: PostgreSQL adapter
-- **pymongo**: MongoDB driver
-
-### Visualization
-- **Matplotlib**: Basic plotting
-- **Seaborn**: Statistical visualization
-- **Plotly**: Interactive visualizations
-- **Bokeh**: Interactive web visualizations
-
-### Utilities
-- **Requests**: HTTP library
-- **BeautifulSoup4**: Web scraping
-- **python-dotenv**: Environment variable management
-- **Celery**: Task queue for background jobs
-
-### Additional Business Tools
-```bash
-# Install additional business-focused packages
-pip install openpyxl xlsxwriter  # Excel file handling
-pip install pillow              # Image processing
-pip install reportlab           # PDF generation
-pip install sendgrid            # Email services
-pip install stripe              # Payment processing
-pip install boto3               # AWS services
-```
-
----
 
 ## Testing Setup
 
@@ -518,4 +521,4 @@ The goal is to get you up and running with a solid development environment that 
 
 
 
-[def]: https://42DaysOfAI.com/42DaysOfAI/public/images/command-palette.png
+ 
