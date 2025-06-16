@@ -153,17 +153,6 @@ which python
 - **python-dotenv**: Environment variable management
 - **Celery**: Task queue for background jobs
 
-### Additional Business Tools
-```bash
-# Install additional business-focused packages
-pip install openpyxl xlsxwriter  # Excel file handling
-pip install pillow              # Image processing
-pip install reportlab           # PDF generation
-pip install sendgrid            # Email services
-pip install stripe              # Payment processing
-pip install boto3               # AWS services
-```
-
 ---
 ```bash
 # Upgrade pip first
@@ -186,6 +175,17 @@ pip install requests beautifulsoup4 python-dotenv
 
 # Save requirements
 pip freeze > requirements.txt
+```
+
+### Additional Business Tools
+```bash
+# Install additional business-focused packages
+pip install openpyxl xlsxwriter  # Excel file handling
+pip install pillow              # Image processing
+pip install reportlab           # PDF generation
+pip install sendgrid            # Email services
+pip install stripe              # Payment processing
+pip install boto3               # AWS services
 ```
 
 ### Step 5: Launch Jupyter
@@ -519,7 +519,9 @@ We also discussed the importance of documenting our code and using comments to e
 This setup provides a solid foundation for developing business web applications with Python and Jupyter Notebooks, we will discuss essential libraries across all major platforms in more depth in the coming days. Also, the face of AI development changes day to day and we will be updating this as we go along.
 
 
-{/* Sidebar Content */}
+## Sidebar Content
+import Sidebar        from '../../components/Sidebar.astro';
+import SidebarContent from '../sidebars/day-1-sidebar.mdx';
 
 <div style="display: flex; gap:1rem; margin:2rem 0;">
   <Sidebar>
