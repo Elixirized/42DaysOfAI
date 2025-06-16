@@ -15,10 +15,11 @@ a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astr
 <p>The Command Palette in VS Code is a powerful feature that allows you to quickly access
 commands and features by typing their names. It’s like a shortcut hub for all the actions
 within the editor.</p>
+<p><img src="/_astro/command-palette-photo.BMdJQ_Se_Z69wYo.webp" alt="Keyboard shortcut for opening the Command Palette in VSCode on Mac showing three keys: cmd with the command symbol, shift with an upward arrow, and P in bold. Plus signs connect the keys. Below the keys is the label Command Palette in gray text. The design is clean and modern with a neutral tone." width="680" height="233" loading="lazy" decoding="async"></p>
 <p>To open it, press Ctrl+Shift+P (or Cmd+Shift+P on Mac), and start typing your command. It’s
 awesome because it speeds up your workflow by letting you jump to any function without
 navigating through menus or remembering keyboard shortcuts.</p>
-<p><img src="https://42DaysOfAI.com/42DaysOfAI/public/images/command-palette.png" alt="Screenshot of the VSCode Command Palette open with the text Python Select Interpreter highlighted in the input box. The surrounding VSCode interface is visible with a dark theme, showing the editor and sidebar. The mood is neutral and instructional."/></p>
+<p><img src="/_astro/command-palette.CDO54__C_Z1MV2OH.webp" alt="Screenshot of Command Palette in VSCode" width="856" height="73" loading="lazy" decoding="async"></p>
 <h1 id="install-vscode-extensions">Install VSCode Extensions</h1>
 <p>To make the most of your Python development experience in VSCode, you’ll want to install some essential extensions. Here are a few key extensions that will enhance your workflow:</p>
 <ol>
@@ -109,6 +110,45 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <span class="line"><span style="color:#6A737D"># Verify activation (should show (venv) in prompt)</span></span>
 <span class="line"><span style="color:#79B8FF">which</span><span style="color:#9ECBFF"> python</span></span></code></pre>
 <h3 id="step-4-install-essential-packages">Step 4: Install Essential Packages</h3>
+<h2 id="essential-libraries">Essential Libraries</h2>
+<h3 id="core-web-frameworks">Core Web Frameworks</h3>
+<ul>
+<li><strong>Flask</strong>: Lightweight, flexible web framework</li>
+<li><strong>Django</strong>: Full-featured web framework with admin interface</li>
+<li><strong>FastAPI</strong>: Modern, fast API framework with automatic documentation</li>
+<li><strong>Streamlit</strong>: Rapid web app development for data science</li>
+</ul>
+<h3 id="data-handling">Data Handling</h3>
+<ul>
+<li><strong>Pandas</strong>: Data manipulation and analysis</li>
+<li><strong>NumPy</strong>: Numerical computing</li>
+<li><strong>SQLAlchemy</strong>: Database ORM</li>
+<li><strong>psycopg2</strong>: PostgreSQL adapter</li>
+<li><strong>pymongo</strong>: MongoDB driver</li>
+</ul>
+<h3 id="visualization">Visualization</h3>
+<ul>
+<li><strong>Matplotlib</strong>: Basic plotting</li>
+<li><strong>Seaborn</strong>: Statistical visualization</li>
+<li><strong>Plotly</strong>: Interactive visualizations</li>
+<li><strong>Bokeh</strong>: Interactive web visualizations</li>
+</ul>
+<h3 id="utilities">Utilities</h3>
+<ul>
+<li><strong>Requests</strong>: HTTP library</li>
+<li><strong>BeautifulSoup4</strong>: Web scraping</li>
+<li><strong>python-dotenv</strong>: Environment variable management</li>
+<li><strong>Celery</strong>: Task queue for background jobs</li>
+</ul>
+<h3 id="additional-business-tools">Additional Business Tools</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install additional business-focused packages</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> openpyxl</span><span style="color:#9ECBFF"> xlsxwriter</span><span style="color:#6A737D">  # Excel file handling</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> pillow</span><span style="color:#6A737D">              # Image processing</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> reportlab</span><span style="color:#6A737D">           # PDF generation</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> sendgrid</span><span style="color:#6A737D">            # Email services</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> stripe</span><span style="color:#6A737D">              # Payment processing</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> boto3</span><span style="color:#6A737D">               # AWS services</span></span></code></pre>
+<hr/>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Upgrade pip first</span></span>
 <span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> --upgrade</span><span style="color:#9ECBFF"> pip</span></span>
 <span class="line"></span>
@@ -260,45 +300,6 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># Or start classic Jupyter Notebook</span></span>
 <span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> notebook</span></span></code></pre>
-<hr/>
-<h2 id="essential-libraries">Essential Libraries</h2>
-<h3 id="core-web-frameworks">Core Web Frameworks</h3>
-<ul>
-<li><strong>Flask</strong>: Lightweight, flexible web framework</li>
-<li><strong>Django</strong>: Full-featured web framework with admin interface</li>
-<li><strong>FastAPI</strong>: Modern, fast API framework with automatic documentation</li>
-<li><strong>Streamlit</strong>: Rapid web app development for data science</li>
-</ul>
-<h3 id="data-handling">Data Handling</h3>
-<ul>
-<li><strong>Pandas</strong>: Data manipulation and analysis</li>
-<li><strong>NumPy</strong>: Numerical computing</li>
-<li><strong>SQLAlchemy</strong>: Database ORM</li>
-<li><strong>psycopg2</strong>: PostgreSQL adapter</li>
-<li><strong>pymongo</strong>: MongoDB driver</li>
-</ul>
-<h3 id="visualization">Visualization</h3>
-<ul>
-<li><strong>Matplotlib</strong>: Basic plotting</li>
-<li><strong>Seaborn</strong>: Statistical visualization</li>
-<li><strong>Plotly</strong>: Interactive visualizations</li>
-<li><strong>Bokeh</strong>: Interactive web visualizations</li>
-</ul>
-<h3 id="utilities">Utilities</h3>
-<ul>
-<li><strong>Requests</strong>: HTTP library</li>
-<li><strong>BeautifulSoup4</strong>: Web scraping</li>
-<li><strong>python-dotenv</strong>: Environment variable management</li>
-<li><strong>Celery</strong>: Task queue for background jobs</li>
-</ul>
-<h3 id="additional-business-tools">Additional Business Tools</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install additional business-focused packages</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> openpyxl</span><span style="color:#9ECBFF"> xlsxwriter</span><span style="color:#6A737D">  # Excel file handling</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> pillow</span><span style="color:#6A737D">              # Image processing</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> reportlab</span><span style="color:#6A737D">           # PDF generation</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> sendgrid</span><span style="color:#6A737D">            # Email services</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> stripe</span><span style="color:#6A737D">              # Payment processing</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> boto3</span><span style="color:#6A737D">               # AWS services</span></span></code></pre>
 <hr/>
 <h2 id="testing-setup">Testing Setup</h2>
 <h3 id="create-a-test-jupyter-notebook">Create a Test Jupyter Notebook</h3>
