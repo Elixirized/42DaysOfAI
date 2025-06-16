@@ -23,14 +23,19 @@ The Command Palette in VS Code is a powerful feature that allows you to quickly 
 commands and features by typing their names. It's like a shortcut hub for all the actions
 within the editor.
 
-![Keyboard shortcut for opening the Command Palette in VSCode on Mac showing three keys: cmd with the command symbol, shift with an upward arrow, and P in bold. Plus signs connect the keys. Below the keys is the label Command Palette in gray text. The design is clean and modern with a neutral tone.](../../../public/images/command-palette-photo.png)
+{/*
+![Keyboard shortcut for opening the Command Palette in VSCode on Mac showing three keys: cmd with the command symbol, shift with an upward arrow, and P in bold. Plus signs connect the keys. Below the keys is the label Command Palette in gray text. The design is clean and modern with a neutral tone.](../../../public/images/command-palette-photo.png) is not a valid image path. The image is not found in the specified location.
+*/}
 
+  <img src="/images/command-palette-photo.png" alt="Keyboard shortcut for opening the Command Palette in VSCode on Mac showing three keys: cmd with the command symbol, shift with an upward arrow, and P in bold. Plus signs connect the keys. Below the keys is the label Command Palette in gray text. The design is clean and modern with a neutral tone." />
+
+  
 To open it, press Ctrl+Shift+P (or Cmd+Shift+P on Mac), and start typing your command. It's
 awesome because it speeds up your workflow by letting you jump to any function without
 navigating through menus or remembering keyboard shortcuts.
 
+<img src="/images/command-palette.png" alt="Screenshot of Command Palette in VSCode" />
 
-![Screenshot of Command Palette in VSCode](public/images/command-palette.png)
 
 # Install VSCode Extensions
 
@@ -504,19 +509,23 @@ netstat -ano | findstr :8888
 taskkill /PID <PID> /F
 ```
 
-
+## Day 1 Recap
+Today, we set up our development environment for building business web applications using Python. We installed VSCode, configured essential extensions, and set up a virtual environment. We also explored the Jupyter notebook interface and created a simple web application using Flask and Streamlit.
+We installed essential libraries for data handling, visualization, and web development. We also created a simple Streamlit dashboard to visualize business metrics.
+We learned how to create a project structure that is easy to navigate and maintain. We also discussed best practices for managing dependencies, using virtual environments, and documenting our code.
+We also covered troubleshooting common issues that may arise during setup and development. This included permission errors, command not found errors, module import errors, and port conflicts.
+We also discussed the importance of using version control with Git and keeping our requirements.txt file updated. We learned how to use .env files to manage sensitive data and environment variables.
+We also discussed the importance of documenting our code and using comments to explain complex logic. We learned how to use MDX to create documentation files and how to use Jupyter notebooks to create interactive documentation.
 This setup provides a solid foundation for developing business web applications with Python and Jupyter Notebooks, we will discuss essential libraries across all major platforms in more depth in the coming days. Also, the face of AI development changes day to day and we will be updating this as we go along.
 
 
+{/* Sidebar Content */}
 
-
-# Sidebar
-
-We will iterate on VSCode extensions and Python libraries throughout our 
-adventure, culminating with an "ideal" set of configurations, etc. Much of what is here is tested on MacOs Sequoia, yet the other OS versions are covered. Adjustments might need to be made for Windows, WSL or Linux. This is a technical setup day, so don't worry if you don't understand everything. We will be using these tools throughout the course, and you will become familiar with them as we go along. 
-The goal is to get you up and running with a solid development environment that will support your learning and projects.
-
-
+<div style="display: flex; gap:1rem; margin:2rem 0;">
+  <Sidebar>
+    <SidebarContent />
+  </Sidebar>
+</div>
 
 
 
