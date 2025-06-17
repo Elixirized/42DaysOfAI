@@ -11,8 +11,18 @@ description: |
   • RESOURCES: References to dive deeper on today's topics/tools.
 
 ---
-# 🚧 Work in Progress 🚧
+# Day 1: Dev Environment Setup: First Business Application 
+This is the first day of our 42 Days of AI course, where we will set up our development environment for building business web applications using Python. We will install Visual Studio Code (VSCode), configure essential extensions, and set up a virtual environment. We will also explore the Jupyter notebook interface within VSCode and create a simple web application using Flask and Streamlit.
 
+## Table of Contents {/* Should this go below #Install VSCode Extensions? */}
+1. [macOS Setup](#macos-setup)
+2. [Windows Setup](#windows-setup)
+3. [Linux Setup](#linux-setup)
+4. [Essential Libraries](#essential-libraries)
+5. [Testing Setup](#testing-setup)
+6. [First Web App](#first-web-app) {/* This would be moved to day2.mdx*/}
+
+---
 # Install VSCode
 
 If you don't already have VSCode installed, go do that [here](https://code.visualstudio.com/).
@@ -22,12 +32,9 @@ If you don't already have VSCode installed, go do that [here](https://code.visua
 The Command Palette in VS Code is a powerful feature that allows you to quickly access
 commands and features by typing their names. It's like a shortcut hub for all the actions
 within the editor.
+To open the Command Palette, you can use the keyboard shortcut:
 
-{/*
-![Keyboard shortcut for opening the Command Palette in VSCode on Mac showing three keys: cmd with the command symbol, shift with an upward arrow, and P in bold. Plus signs connect the keys. Below the keys is the label Command Palette in gray text. The design is clean and modern with a neutral tone.](../../../public/images/command-palette-photo.png) is not a valid image path. The image is not found in the specified location.
-*/}
-
-  <img src="/images/command-palette-photo.png" alt="Keyboard shortcut for opening the Command Palette in VSCode on Mac showing three keys: cmd with the command symbol, shift with an upward arrow, and P in bold. Plus signs connect the keys. Below the keys is the label Command Palette in gray text. The design is clean and modern with a neutral tone." />
+<img src="/images/command-palette-photo.png" alt="Three keyboard keys arranged horizontally: cmd with the command symbol, shift with an upward arrow, and P in bold. Plus signs connect the keys, illustrating the keyboard shortcut for opening the Command Palette. Below the keys, the text Command Palette appears in gray. The background is neutral with a clean and modern design, creating a calm and focused workspace." />
 
   
 To open it, press Ctrl+Shift+P (or Cmd+Shift+P on Mac), and start typing your command. It's
@@ -37,7 +44,7 @@ navigating through menus or remembering keyboard shortcuts.
 <img src="/images/command-palette.png" alt="Screenshot of Command Palette in VSCode" />
 
 
-# Install VSCode Extensions
+# Install VSCode Extensions {/* Should this be a level 1 heading? */}
 
 To make the most of your Python development experience in VSCode, you'll want to install some essential extensions. Here are a few key extensions that will enhance your workflow:
 
@@ -73,13 +80,6 @@ There are many more extensions available in the VSCode marketplace, but these ar
 
 # ValidatePython/AI Libraries Guide - Manual Setup
 
-## Table of Contents
-1. [macOS Setup](#macos-setup)
-2. [Windows Setup](#windows-setup)
-3. [Linux Setup](#linux-setup)
-4. [Essential Libraries](#essential-libraries)
-5. [Testing Setup](#testing-setup)
-6. [First Web App](#first-web-app)
 
 ---
 
@@ -356,7 +356,7 @@ pip install requests beautifulsoup4 python-dotenv
 # Save requirements
 pip freeze > requirements.txt
 ```
-### Additional Business Tools
+### Additional Business Tools {/* Should this sectiongo to another day in the future?*/}
 ```bash
 # Install additional business-focused packages
 pip install openpyxl xlsxwriter  # Excel file handling
@@ -367,7 +367,7 @@ pip install stripe              # Payment processing
 pip install boto3               # AWS services
 ```
 
-### Step 5: Launch Jupyter
+### Step 5: Launch Jupyter {/* This needs to reflect the usage of Jupyter embedded in VSCode */}
 ```bash
 # Start Jupyter Lab
 jupyter lab
@@ -381,7 +381,7 @@ jupyter notebook
 
 ## Testing Setup
 
-### Create a Test Jupyter Notebook
+### Create a Test Jupyter Notebook {/* This section needs to reflect the usage of Jupyter embedded in VSCode  Also, do we even need this section here? Or would it better serve us on another day? */}
 1. **Start Jupyter Lab:**
 ```bash
 jupyter lab
@@ -429,7 +429,7 @@ if __name__ == '__main__':
 
 ---
 
-## First Web App
+## First Web App {/* Should we put this Streamlit Dashboard app into day2.mdx as the project of the day?*/}
 
 ### Simple Streamlit Dashboard
 Create file `dashboard.py`:
@@ -496,7 +496,7 @@ business-web-app/
 
 ---
 
-## Troubleshooting Common Issues
+## Troubleshooting Common Issues {/* Do we need this section?*/}
 
 ### Permission Errors
 ```bash
@@ -528,13 +528,16 @@ lsof -ti:8888 | xargs kill -9
 netstat -ano | findstr :8888
 taskkill /PID <PID> /F
 ```
-
+{/* Change this to reflect the First Business App being moved to day-2.mdx */}
 ## Day 1 Recap
 Today, we set up our development environment for building business web applications using Python. We installed VSCode, configured essential extensions, and set up a virtual environment. We also explored the Jupyter notebook interface and created a simple web application using Flask and Streamlit.
 Installing essential libraries for data handling, visualization, and web development. We also created a simple Streamlit dashboard to visualize business metrics.
+
 We learned how to create a project structure that is easy to navigate and maintain and also discussed best practices for managing dependencies, using virtual environments, and documenting our code.
 We also covered troubleshooting common issues that may arise during setup and development. This included permission errors, command not found errors, module import errors, and port conflicts.
+
 The importance of using version control with Git and keeping our requirements.txt file updated was discussed, and we learned how to use .env files to manage sensitive data and environment variables.
+
 Discussing the importance of documenting our code and using comments to explain complex logic, we learned how to use MDX to create documentation files and how to use Jupyter notebooks to create interactive documentation.
 This setup provides a solid foundation for developing business web applications with Python and Jupyter Notebooks, we will discuss essential libraries across all major platforms in more depth in the coming days. Also, the face of AI development changes day to day and we will be updating this as we go along.
 
