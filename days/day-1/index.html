@@ -78,8 +78,6 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <li><a href="#windows-setup">Windows Setup</a></li>
 <li><a href="#linux-setup">Linux Setup</a></li>
 <li><a href="#essential-libraries">Essential Libraries</a> </li>
-<li><a href="#testing-setup">Testing Setup</a> </li>
-<li><a href="#first-web-app">First Web App</a> </li>
 </ol>
 <h2 id="macos-setup">macOS Setup</h2>
 <h3 id="step-1-install-homebrew-package-manager">Step 1: Install Homebrew (Package Manager)</h3>
@@ -164,20 +162,6 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># Save requirements</span></span>
 <span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> freeze</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> requirements.txt</span></span></code></pre>
-<h3 id="additional-business-tools">Additional Business Tools</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install additional business-focused packages</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> openpyxl</span><span style="color:#9ECBFF"> xlsxwriter</span><span style="color:#6A737D">  # Excel file handling</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> pillow</span><span style="color:#6A737D">              # Image processing</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> reportlab</span><span style="color:#6A737D">           # PDF generation</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> sendgrid</span><span style="color:#6A737D">            # Email services</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> stripe</span><span style="color:#6A737D">              # Payment processing</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> boto3</span><span style="color:#6A737D">               # AWS services</span></span></code></pre>
-<h3 id="step-5-launch-jupyter">Step 5: Launch Jupyter</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Start Jupyter Lab (recommended)</span></span>
-<span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> lab</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># Or start classic Jupyter Notebook</span></span>
-<span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> notebook</span></span></code></pre>
 <hr/>
 <h2 id="windows-setup">Windows Setup</h2>
 <h3 id="step-1-install-python">Step 1: Install Python</h3>
@@ -243,19 +227,6 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># Save requirements</span></span>
 <span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> freeze</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> requirements.txt</span></span></code></pre>
-<h3 id="additional-business-tools-1">Additional Business Tools</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install additional business-focused packages</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> openpyxl</span><span style="color:#9ECBFF"> xlsxwriter</span><span style="color:#6A737D">  # Excel file handling</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> pillow</span><span style="color:#6A737D">              # Image processing</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> reportlab</span><span style="color:#6A737D">           # PDF generation</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> sendgrid</span><span style="color:#6A737D">            # Email services</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> stripe</span><span style="color:#6A737D">              # Payment processing</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> boto3</span><span style="color:#6A737D">               # AWS services</span></span></code></pre>
-<h3 id="step-7-launch-jupyter">Step 7: Launch Jupyter</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Start Jupyter Lab</span></span>
-<span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> lab</span><span style="color:#79B8FF"> --ip=0.0.0.0</span><span style="color:#79B8FF"> --port=8888</span><span style="color:#79B8FF"> --no-browser</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># Access via Windows browser at: http://localhost:8888</span></span></code></pre>
 <hr/>
 <h2 id="linux-setup">Linux Setup</h2>
 <h3 id="step-1-update-system">Step 1: Update System</h3>
@@ -305,145 +276,7 @@ navigating through menus or remembering keyboard shortcuts.</p>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># Save requirements</span></span>
 <span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> freeze</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> requirements.txt</span></span></code></pre>
-<h3 id="additional-business-tools--should-this-sectiongo-to-another-day-in-the-future">Additional Business Tools </h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install additional business-focused packages</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> openpyxl</span><span style="color:#9ECBFF"> xlsxwriter</span><span style="color:#6A737D">  # Excel file handling</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> pillow</span><span style="color:#6A737D">              # Image processing</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> reportlab</span><span style="color:#6A737D">           # PDF generation</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> sendgrid</span><span style="color:#6A737D">            # Email services</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> stripe</span><span style="color:#6A737D">              # Payment processing</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> boto3</span><span style="color:#6A737D">               # AWS services</span></span></code></pre>
-<h3 id="step-5-launch-jupyter--this-needs-to-reflect-the-usage-of-jupyter-embedded-in-vscode">Step 5: Launch Jupyter </h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Start Jupyter Lab</span></span>
-<span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> lab</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># Or start classic Jupyter Notebook</span></span>
-<span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> notebook</span></span></code></pre>
 <hr/>
-<h2 id="testing-setup">Testing Setup</h2>
-<h3 id="create-a-test-jupyter-notebook--this-section-needs-to-reflect-the-usage-of-jupyter-embedded-in-vscode--also-do-we-even-need-this-section-here-or-would-it-better-serve-us-on-another-day">Create a Test Jupyter Notebook </h3>
-<ol>
-<li><strong>Start Jupyter Lab:</strong></li>
-</ol>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">jupyter</span><span style="color:#9ECBFF"> lab</span></span></code></pre>
-<ol start="2">
-<li>
-<p><strong>Create new notebook:</strong> Click ”+” then select “Python 3”</p>
-</li>
-<li>
-<p><strong>Test basic functionality:</strong></p>
-</li>
-</ol>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Cell 1: Test imports</span></span>
-<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> pandas </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> pd</span></span>
-<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> numpy </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> np</span></span>
-<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> matplotlib.pyplot </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> plt</span></span>
-<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> plotly.express </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> px</span></span>
-<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;All libraries imported successfully!&quot;</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># Cell 2: Test data handling</span></span>
-<span class="line"><span style="color:#E1E4E8">df </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> pd.DataFrame({</span></span>
-<span class="line"><span style="color:#9ECBFF">    &#39;x&#39;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">range</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">),</span></span>
-<span class="line"><span style="color:#9ECBFF">    &#39;y&#39;</span><span style="color:#E1E4E8">: np.random.randn(</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"><span style="color:#E1E4E8">})</span></span>
-<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(df.head())</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># Cell 3: Test visualization</span></span>
-<span class="line"><span style="color:#E1E4E8">plt.figure(</span><span style="color:#FFAB70">figsize</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">))</span></span>
-<span class="line"><span style="color:#E1E4E8">plt.plot(df[</span><span style="color:#9ECBFF">&#39;x&#39;</span><span style="color:#E1E4E8">], df[</span><span style="color:#9ECBFF">&#39;y&#39;</span><span style="color:#E1E4E8">])</span></span>
-<span class="line"><span style="color:#E1E4E8">plt.title(</span><span style="color:#9ECBFF">&#39;Test Plot&#39;</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"><span style="color:#E1E4E8">plt.show()</span></span></code></pre>
-<h3 id="test-web-framework">Test Web Framework</h3>
-<p>Create a simple Flask app:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># In Jupyter cell or separate file</span></span>
-<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> flask </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Flask</span></span>
-<span class="line"><span style="color:#E1E4E8">app </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Flask(</span><span style="color:#79B8FF">__name__</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#B392F0">@app.route</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&#39;/&#39;</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"><span style="color:#F97583">def</span><span style="color:#B392F0"> hello</span><span style="color:#E1E4E8">():</span></span>
-<span class="line"><span style="color:#F97583">    return</span><span style="color:#9ECBFF"> &#39;&lt;h1&gt;Hello, Business Web App!&lt;/h1&gt;&#39;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">if</span><span style="color:#79B8FF"> __name__</span><span style="color:#F97583"> ==</span><span style="color:#9ECBFF"> &#39;__main__&#39;</span><span style="color:#E1E4E8">:</span></span>
-<span class="line"><span style="color:#E1E4E8">    app.run(</span><span style="color:#FFAB70">debug</span><span style="color:#F97583">=</span><span style="color:#79B8FF">True</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">port</span><span style="color:#F97583">=</span><span style="color:#79B8FF">5000</span><span style="color:#E1E4E8">)</span></span></code></pre>
-<hr/>
-<h2 id="first-web-app--should-we-put-this-streamlit-dashboard-app-into-day2mdx-as-the-project-of-the-day">First Web App </h2>
-<h3 id="simple-streamlit-dashboard">Simple Streamlit Dashboard</h3>
-<p>Create file <code>dashboard.py</code>:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> streamlit </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> st</span></span>
-<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> pandas </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> pd</span></span>
-<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> plotly.express </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> px</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">st.title(</span><span style="color:#9ECBFF">&#39;Business Dashboard&#39;</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># Sample data</span></span>
-<span class="line"><span style="color:#E1E4E8">data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> pd.DataFrame({</span></span>
-<span class="line"><span style="color:#9ECBFF">    &#39;Month&#39;</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">&#39;Jan&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&#39;Feb&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&#39;Mar&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&#39;Apr&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&#39;May&#39;</span><span style="color:#E1E4E8">],</span></span>
-<span class="line"><span style="color:#9ECBFF">    &#39;Revenue&#39;</span><span style="color:#E1E4E8">: [</span><span style="color:#79B8FF">10000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">12000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">15000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">11000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">18000</span><span style="color:#E1E4E8">],</span></span>
-<span class="line"><span style="color:#9ECBFF">    &#39;Expenses&#39;</span><span style="color:#E1E4E8">: [</span><span style="color:#79B8FF">8000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">9000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">8500</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">12000</span><span style="color:#E1E4E8">]</span></span>
-<span class="line"><span style="color:#E1E4E8">})</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># Display metrics</span></span>
-<span class="line"><span style="color:#E1E4E8">col1, col2, col3 </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> st.columns(</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"><span style="color:#F97583">with</span><span style="color:#E1E4E8"> col1:</span></span>
-<span class="line"><span style="color:#E1E4E8">    st.metric(</span><span style="color:#9ECBFF">&#39;Total Revenue&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">&quot;$</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">data[</span><span style="color:#9ECBFF">&#39;Revenue&#39;</span><span style="color:#E1E4E8">].sum()</span><span style="color:#F97583">:,</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">&quot;</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"><span style="color:#F97583">with</span><span style="color:#E1E4E8"> col2:</span></span>
-<span class="line"><span style="color:#E1E4E8">    st.metric(</span><span style="color:#9ECBFF">&#39;Total Expenses&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">&quot;$</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">data[</span><span style="color:#9ECBFF">&#39;Expenses&#39;</span><span style="color:#E1E4E8">].sum()</span><span style="color:#F97583">:,</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">&quot;</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"><span style="color:#F97583">with</span><span style="color:#E1E4E8"> col3:</span></span>
-<span class="line"><span style="color:#E1E4E8">    profit </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> data[</span><span style="color:#9ECBFF">&#39;Revenue&#39;</span><span style="color:#E1E4E8">].sum() </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> data[</span><span style="color:#9ECBFF">&#39;Expenses&#39;</span><span style="color:#E1E4E8">].sum()</span></span>
-<span class="line"><span style="color:#E1E4E8">    st.metric(</span><span style="color:#9ECBFF">&#39;Net Profit&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">&quot;$</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">profit</span><span style="color:#F97583">:,</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">&quot;</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># Display chart</span></span>
-<span class="line"><span style="color:#E1E4E8">fig </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> px.line(data, </span><span style="color:#FFAB70">x</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&#39;Month&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">y</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">&#39;Revenue&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&#39;Expenses&#39;</span><span style="color:#E1E4E8">], </span></span>
-<span class="line"><span style="color:#FFAB70">              title</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&#39;Revenue vs Expenses&#39;</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"><span style="color:#E1E4E8">st.plotly_chart(fig)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># Display data table</span></span>
-<span class="line"><span style="color:#E1E4E8">st.subheader(</span><span style="color:#9ECBFF">&#39;Raw Data&#39;</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"><span style="color:#E1E4E8">st.dataframe(data)</span></span></code></pre>
-<p>Run with:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">streamlit</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> dashboard.py</span></span></code></pre>
-<h3 id="project-structure">Project Structure</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>business-web-app/</span></span>
-<span class="line"><span>├── venv/                 # Virtual environment</span></span>
-<span class="line"><span>├── notebooks/            # Jupyter notebooks</span></span>
-<span class="line"><span>├── src/                  # Source code</span></span>
-<span class="line"><span>├── data/                 # Data files</span></span>
-<span class="line"><span>├── templates/            # HTML templates</span></span>
-<span class="line"><span>├── static/               # CSS, JS, images</span></span>
-<span class="line"><span>├── requirements.txt      # Dependencies</span></span>
-<span class="line"><span>├── .env                  # Environment variables</span></span>
-<span class="line"><span>└── README.md            # Project documentation</span></span></code></pre>
-<h3 id="best-practices">Best Practices</h3>
-<ol>
-<li><strong>Always use virtual environments</strong></li>
-<li><strong>Keep requirements.txt updated</strong></li>
-<li><strong>Use .env files for sensitive data</strong></li>
-<li><strong>Version control with Git</strong></li>
-<li><strong>Document your code</strong></li>
-<li><strong>Test your applications</strong></li>
-</ol>
-<hr/>
-<h2 id="troubleshooting-common-issues--do-we-need-this-section">Troubleshooting Common Issues </h2>
-<h3 id="permission-errors">Permission Errors</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Use --user flag if needed</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> --user</span><span style="color:#9ECBFF"> package_name</span></span></code></pre>
-<h3 id="command-not-found">Command Not Found</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Make sure virtual environment is activated</span></span>
-<span class="line"><span style="color:#6A737D"># Check PATH includes Python scripts directory</span></span>
-<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> $PATH </span><span style="color:#F97583">|</span><span style="color:#B392F0"> grep</span><span style="color:#9ECBFF"> python</span></span></code></pre>
-<h3 id="module-import-errors">Module Import Errors</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Verify package installation</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> list</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> grep</span><span style="color:#9ECBFF"> package_name</span></span>
-<span class="line"><span style="color:#6A737D"># Reinstall if necessary</span></span>
-<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> --force-reinstall</span><span style="color:#9ECBFF"> package_name</span></span></code></pre>
-<h3 id="port-already-in-use">Port Already in Use</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Kill process using port (Linux/macOS)</span></span>
-<span class="line"><span style="color:#B392F0">lsof</span><span style="color:#79B8FF"> -ti:8888</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> xargs</span><span style="color:#9ECBFF"> kill</span><span style="color:#79B8FF"> -9</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># Windows</span></span>
-<span class="line"><span style="color:#B392F0">netstat</span><span style="color:#79B8FF"> -ano</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> findstr</span><span style="color:#9ECBFF"> :8888</span></span>
-<span class="line"><span style="color:#B392F0">taskkill</span><span style="color:#9ECBFF"> /PID</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">PI</span><span style="color:#E1E4E8">D</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF"> /F</span></span></code></pre>
-
 <h2 id="day-1-recap">Day 1 Recap</h2>
 <p>Today, we set up our development environment for building business web applications using Python. We installed VSCode, configured essential extensions, and set up a virtual environment. We also explored the Jupyter notebook interface and created a simple web application using Flask and Streamlit.
 Installing essential libraries for data handling, visualization, and web development. We also created a simple Streamlit dashboard to visualize business metrics.</p>
