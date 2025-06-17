@@ -79,8 +79,7 @@ There are many more extensions available in the VSCode marketplace, but these ar
 2. [Windows Setup](#windows-setup)
 3. [Linux Setup](#linux-setup)
 4. [Essential Libraries](#essential-libraries) {/* Remove the extra Business Libraries */}
-5. [Testing Setup](#testing-setup) {/* This need to be removed from day-1 and replaced with a section on VSCode Integration */}
-6. [First Web App](#first-web-app) {/* This would be moved to day2.mdx */}
+
 
 ## macOS Setup
 
@@ -176,26 +175,6 @@ pip install requests beautifulsoup4 python-dotenv
 pip freeze > requirements.txt
 ```
 
-### Additional Business Tools
-```bash
-# Install additional business-focused packages
-pip install openpyxl xlsxwriter  # Excel file handling
-pip install pillow              # Image processing
-pip install reportlab           # PDF generation
-pip install sendgrid            # Email services
-pip install stripe              # Payment processing
-pip install boto3               # AWS services
-```
-
-### Step 5: Launch Jupyter
-```bash
-# Start Jupyter Lab (recommended)
-jupyter lab
-
-# Or start classic Jupyter Notebook
-jupyter notebook
-```
-
 ---
 
 ## Windows Setup
@@ -274,24 +253,6 @@ pip install requests beautifulsoup4 python-dotenv
 # Save requirements
 pip freeze > requirements.txt
 ```
-### Additional Business Tools
-```bash
-# Install additional business-focused packages
-pip install openpyxl xlsxwriter  # Excel file handling
-pip install pillow              # Image processing
-pip install reportlab           # PDF generation
-pip install sendgrid            # Email services
-pip install stripe              # Payment processing
-pip install boto3               # AWS services
-```
-
-### Step 7: Launch Jupyter
-```bash
-# Start Jupyter Lab
-jupyter lab --ip=0.0.0.0 --port=8888 --no-browser
-
-# Access via Windows browser at: http://localhost:8888
-```
 
 ---
 
@@ -355,179 +316,10 @@ pip install requests beautifulsoup4 python-dotenv
 # Save requirements
 pip freeze > requirements.txt
 ```
-### Additional Business Tools {/* Should this sectiongo to another day in the future?*/}
-```bash
-# Install additional business-focused packages
-pip install openpyxl xlsxwriter  # Excel file handling
-pip install pillow              # Image processing
-pip install reportlab           # PDF generation
-pip install sendgrid            # Email services
-pip install stripe              # Payment processing
-pip install boto3               # AWS services
-```
-
-### Step 5: Launch Jupyter {/* This needs to reflect the usage of Jupyter embedded in VSCode */}
-```bash
-# Start Jupyter Lab
-jupyter lab
-
-# Or start classic Jupyter Notebook
-jupyter notebook
-```
 
 ---
 
 
-## Testing Setup
-
-### Create a Test Jupyter Notebook {/* This section needs to reflect the usage of Jupyter embedded in VSCode  Also, do we even need this section here? Or would it better serve us on another day? */}
-1. **Start Jupyter Lab:**
-```bash
-jupyter lab
-```
-
-2. **Create new notebook:** Click "+" then select "Python 3"
-
-3. **Test basic functionality:**
-```python
-# Cell 1: Test imports
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import plotly.express as px
-print("All libraries imported successfully!")
-
-# Cell 2: Test data handling
-df = pd.DataFrame({
-    'x': range(10),
-    'y': np.random.randn(10)
-})
-print(df.head())
-
-# Cell 3: Test visualization
-plt.figure(figsize=(8, 4))
-plt.plot(df['x'], df['y'])
-plt.title('Test Plot')
-plt.show()
-```
-
-### Test Web Framework
-Create a simple Flask app:
-```python
-# In Jupyter cell or separate file
-from flask import Flask
-app = Flask(__name__)
-
-@app.route('/')
-def hello():
-    return '<h1>Hello, Business Web App!</h1>'
-
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)
-```
-
----
-
-## First Web App {/* Should we put this Streamlit Dashboard app into day2.mdx as the project of the day?*/}
-
-### Simple Streamlit Dashboard
-Create file `dashboard.py`:
-```python
-import streamlit as st
-import pandas as pd
-import plotly.express as px
-
-st.title('Business Dashboard')
-
-# Sample data
-data = pd.DataFrame({
-    'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
-    'Revenue': [10000, 12000, 15000, 11000, 18000],
-    'Expenses': [8000, 9000, 10000, 8500, 12000]
-})
-
-# Display metrics
-col1, col2, col3 = st.columns(3)
-with col1:
-    st.metric('Total Revenue', f"${data['Revenue'].sum():,}")
-with col2:
-    st.metric('Total Expenses', f"${data['Expenses'].sum():,}")
-with col3:
-    profit = data['Revenue'].sum() - data['Expenses'].sum()
-    st.metric('Net Profit', f"${profit:,}")
-
-# Display chart
-fig = px.line(data, x='Month', y=['Revenue', 'Expenses'], 
-              title='Revenue vs Expenses')
-st.plotly_chart(fig)
-
-# Display data table
-st.subheader('Raw Data')
-st.dataframe(data)
-```
-
-Run with:
-```bash
-streamlit run dashboard.py
-```
-
-### Project Structure
-```
-business-web-app/
-├── venv/                 # Virtual environment
-├── notebooks/            # Jupyter notebooks
-├── src/                  # Source code
-├── data/                 # Data files
-├── templates/            # HTML templates
-├── static/               # CSS, JS, images
-├── requirements.txt      # Dependencies
-├── .env                  # Environment variables
-└── README.md            # Project documentation
-```
-
-### Best Practices
-1. **Always use virtual environments**
-2. **Keep requirements.txt updated**
-3. **Use .env files for sensitive data**
-4. **Version control with Git**
-5. **Document your code**
-6. **Test your applications**
-
----
-
-## Troubleshooting Common Issues {/* Do we need this section?*/}
-
-### Permission Errors
-```bash
-# Use --user flag if needed
-pip install --user package_name
-```
-
-### Command Not Found
-```bash
-# Make sure virtual environment is activated
-# Check PATH includes Python scripts directory
-echo $PATH | grep python
-```
-
-### Module Import Errors
-```bash
-# Verify package installation
-pip list | grep package_name
-# Reinstall if necessary
-pip install --force-reinstall package_name
-```
-
-### Port Already in Use
-```bash
-# Kill process using port (Linux/macOS)
-lsof -ti:8888 | xargs kill -9
-
-# Windows
-netstat -ano | findstr :8888
-taskkill /PID <PID> /F
-```
-{/* Change this to reflect the First Business App being moved to day-2.mdx */}
 ## Day 1 Recap
 Today, we set up our development environment for building business web applications using Python. We installed VSCode, configured essential extensions, and set up a virtual environment. We also explored the Jupyter notebook interface and created a simple web application using Flask and Streamlit.
 Installing essential libraries for data handling, visualization, and web development. We also created a simple Streamlit dashboard to visualize business metrics.
