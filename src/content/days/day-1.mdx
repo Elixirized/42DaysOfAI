@@ -11,6 +11,10 @@ description: |
   • RESOURCES: References to dive deeper on today's topics/tools.
 
 ---
+
+import Sidebar        from '../../components/Sidebar.astro';
+import SidebarContent from '../sidebars/capstone.mdx';
+
 # Day 1: Dev Environment Setup
 This is the first day of our 42 Days of AI course, where we will set up our development environment for building business web applications using Python. We will install Visual Studio Code (VSCode), configure essential extensions, and set up a virtual environment. We will also explore the Jupyter notebook interface within VSCode and create a simple web application.
 
@@ -321,8 +325,8 @@ pip freeze > requirements.txt
 
 
 ## Day 1 Recap
-Today, we set up our development environment for building business web applications using Python. We installed VSCode, configured essential extensions, and set up a virtual environment. We also explored the Jupyter notebook interface and created a simple web application using Flask and Streamlit.
-Installing essential libraries for data handling, visualization, and web development. We also created a simple Streamlit dashboard to visualize business metrics.
+Today, we set up our development environment for building business web applications using Python. We installed VSCode, configured essential extensions, and set up a virtual environment. We also explored the Jupyter notebook interface and created a simple web application, as well as installed essential libraries for data handling, visualization, and web development.
+
 
 We learned how to create a project structure that is easy to navigate and maintain and also discussed best practices for managing dependencies, using virtual environments, and documenting our code. 
 The importance of using version control with Git and keeping our requirements.txt file updated was discussed, and we learned how to use .env files to manage sensitive data and environment variables.
@@ -332,8 +336,7 @@ This setup provides a solid foundation for developing business web applications 
 
 
 
-import Sidebar        from '../../components/Sidebar.astro';
-import SidebarContent from '../sidebars/capstone.mdx';
+
 
 <div style="display: flex; gap:1rem; margin:2rem 0;">
   <Sidebar>
