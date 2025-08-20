@@ -1,20 +1,30 @@
 ---
+// export const layout = '../+layout.astro';
 import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import Layout from '../../components/Layout.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('days');
 	return posts.map((post) => ({
 		// remove .mdx or .md
     params: { slug: post.id.replace(/\.(mdx|md)$/, '') },
-		props: post,
+		// wrap your entry in a `post` prop
+    props: { post },
 	}));
 }
-type Props = CollectionEntry<'days'>;
-const post = Astro.props as Props;
-const { Content } = await render(post);
+// Tell TypeScript what shape Astro.props has
+type Props = { post: CollectionEntry<'days'> };
+
+// Destructure the real `post` off of Astro.props
+const { post } = Astro.props as Props;
+
+const renderResult = await render(post);
+// Now extract Content
+const { Content } = renderResult;
 ---
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost>
+<Layout title={post.data.title} description={post.data.description}>
+	<div class="day_container">
+		<Content />
+	</div>
+</Layout>

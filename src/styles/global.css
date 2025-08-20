@@ -50,6 +50,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+	background-attachment: fixed;
+
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--black));
@@ -61,7 +63,7 @@ body {
   content: "";
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  background: url("/images/bg.jpg") center/cover no-repeat;
+  /* background: url("/images/bg.jpg") center/cover no-repeat fixed; */
   opacity: 0.5;         /* <-- your image opacity */
   z-index: -1;          /* sit behind the .body’s content */
 }
@@ -129,6 +131,11 @@ p code {
 ul,
 ol {
 	margin: 0 0 1.5em 0;
+}
+
+.day_container {
+	margin-left: 10%;
+	margin-right: 10%;
 }
 .prose p {
 	margin-bottom: 1em;
