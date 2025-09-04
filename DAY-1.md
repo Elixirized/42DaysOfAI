@@ -65,8 +65,9 @@ poetry run python -V
 ```
 
 ---
+## NEXT: 📦 Create a Project
 
-### 4. Create a Project
+### 1. Create/Initialize Syntax
 
 ```bash
 poetry new my_project
@@ -89,18 +90,7 @@ my_project/
 
 ---
 
-### 2. Initialize Git (Optional, but recommended)
-
-```bash
-cd my_project
-git init
-git add .
-git commit -m "Initial commit"
-```
-
----
-
-### 3. Configure Your Python Version
+### 2. Configure Your Python Version (if needed)
 
 Inside `pyproject.toml`, Poetry will already have guessed a Python constraint. You can edit it:
 
@@ -117,12 +107,12 @@ poetry new my_project --dependency python="^3.11"
 
 ---
 
-### 4. Activate a Virtual Environment
+### 3. Activate a Virtual Environment
 
 Poetry automatically manages virtual envionments for each project.
 
 ```bash
-poetry install    # creates the venv and installs dependencies
+poetry install    # creates the venv and installs dependencies -- we already ran this above
 poetry shell      # activate the virtualenv
 ```
 
@@ -149,11 +139,13 @@ Now your shell is inside the environment.
 👉 Think of it like:
 
 * `poetry run` = **“just run this thing inside the venv.”**
-* `poetry shell` = **“drop me into the venv until I’m done.”**
+* **`poetry shell`** = **“drop me into the venv until I’m done.”**
+
+✅ We will usually be devloping interactively, so **`poetry shell`** will be our convention.
 
 ---
 
-### 5. Add Dependencies
+### 4. Add Dependencies
 
 We will use Jupyter notebooks embedded in VS Code; this installs those dependencies in our project:
 
@@ -161,7 +153,7 @@ We will use Jupyter notebooks embedded in VS Code; this installs those dependenc
 
 - The `--group dev` flag specifies (in our pyproject.toml file) that these are Development-only dependencies.
 
-This seemingly simple installation command takes our project from an empty list of installed Python libraries (via `poetry show`) from an empty list to something like this:
+This seemingly simple installation command takes our project from an empty list of installed Python libraries (via `poetry show`) to something like this:
 
 ```
 anyio                     4.10.0         High-level concurrency and network...
@@ -264,6 +256,21 @@ webencodings              0.5.1          Character encoding aliases for leg...
 websocket-client          1.8.0          WebSocket client for Python with l...
 widgetsnbextension        4.0.14         Jupyter interactive widgets for Ju...
 ```
+
+### 5. Initialize Git (Sooner, rather than later)
+
+```
+cd my_project # If not already there
+git init
+git add .
+git commit -m "Initial commit"
+```
+#### JH Note: 
+
+- I prefer to create an project in GitHub or GitLab first, then specify my remote in my local project via:
+
+**TO DO**: Insert the syntax here ...
+
 
 ## STILL EDITING ...
 -
