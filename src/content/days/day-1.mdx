@@ -534,7 +534,9 @@ your GitHub account name.
 
 Back to your terminal session, be sure you are in your project's root folder:
 
-`% cd my_project` # If not already there
+```
+% cd my_project
+```
 
 Now initialize your local git repo:
 
@@ -574,7 +576,9 @@ nothing added to commit but untracked files present (use "git add" to track)
 ```
 Tell git you want to add all the files (everything shown above) to the set files to be commited to the repo:
 
-`% git add .`
+```
+% git add .
+```
 
 Confirm that status now:
 ```
@@ -591,7 +595,8 @@ Changes to be committed:
 	new file:   src/my_project/__init__.py        # Text is now GREEN
 	new file:   tests/__init__.py                 # Text is now GREEN
 ```
-Now tell Git: “Save the current state of my project, and label it as the very first version.” 
+Now tell Git to save the current state of this project, and label it as the very first version with the commit 
+comment of "Initial commit.” 
 
 ```
 % git commit -m "Initial commit"
@@ -619,9 +624,13 @@ branch 'main' set up to track 'origin/main'.
 
 You can now go back to your GitHub repo page (at https://github.com/your-GitHub-account-name/Day-1, using this example) and refresh your browser. You will see somethig like this:
 
-<img src="/images/GitHubDay-1Repo.png" alt="Our GitHub Repo" width="600" height="400" />
+<img src="/images/GitHubDay-1Repo.png" alt="Our GitHub Repo" width="800" height="500" />
 
-### Step 4: Install Essential Packages
+
+---
+
+### Step 4: Install Essential Packages (**NEEDS UPDATING**)
+
 ```bash
 # Upgrade pip
 pip install --upgrade pip
