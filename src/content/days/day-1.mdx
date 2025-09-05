@@ -92,7 +92,7 @@ Installing Python has different steps on MacOS and Windows machines, so we start
 ## macOS Setup
 
 ### Step 1: Install Homebrew (Package Manager)
-```bash
+```powershell
 # Install Homebrew
 % /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -105,7 +105,7 @@ Installing Python has different steps on MacOS and Windows machines, so we start
 ```
 
 ### Step 2: Install Python
-```bash
+```powershell
 # Install latest Python
 % brew install python
 
@@ -135,7 +135,7 @@ Installing Python has different steps on MacOS and Windows machines, so we start
 ```
 
 ### Step 3: Update Ubuntu in WSL
-```bash
+```powershell
 # Update package lists
 % sudo apt update && sudo apt upgrade -y
 
@@ -144,7 +144,7 @@ Installing Python has different steps on MacOS and Windows machines, so we start
 ```
 
 ### Step 4: Install Python
-```bash
+```powershell
 # Install Python and pip
 % sudo apt install -y python3 python3-pip python3-venv python3-dev
 
@@ -183,7 +183,7 @@ Installing Python has different steps on MacOS and Windows machines, so we start
 - **Celery**: Task queue for background jobs
 
 ---
-```bash
+```js
 # Upgrade pip first
 % pip install --upgrade pip
 
@@ -207,7 +207,7 @@ pip install pandas numpy matplotlib seaborn plotly
 ```
 
 ### Step 6 Install Essential Packages
-```bash
+```js
 # Upgrade pip
 pip install --upgrade pip
 
@@ -235,7 +235,7 @@ pip freeze > requirements.txt
 ## Linux Setup
 
 ### Step 1: Update System
-```bash
+```js
 # Ubuntu/Debian
 % sudo apt update && sudo apt upgrade -y
 
@@ -245,7 +245,7 @@ pip freeze > requirements.txt
 ```
 
 ### Step 2: Install Python and Dependencies
-```bash
+```js
 # Ubuntu/Debian
 % sudo apt install -y python3 python3-pip python3-venv python3-dev build-essential
 
@@ -266,7 +266,7 @@ Follow these steps to install Poetry and create/manage Python projects; they sho
 
 Run this in your terminal (PowerShell on Windows, Terminal on macOS/Linux):
 
-```bash
+```js
 % curl -sSL https://install.python-poetry.org | python3 -
 ```
 
@@ -276,7 +276,7 @@ If `poetry` is not found after install, add it to your PATH:
 
 * **macOS/Linux (bash/zsh)** → add to `~/.bashrc` or `~/.zshrc`:
 
-  ```bash
+  ```js
   % export PATH="$HOME/.local/bin:$PATH"
   ```
 
@@ -290,7 +290,7 @@ Then restart your terminal.
 
 ### 3. Verify Installation
 
-```bash
+```js
 % poetry --version
 ```
 
@@ -301,7 +301,7 @@ You should see the installed version number.
 
 ### 1. Create/Initialize Syntax
 
-```bash
+```js
 % poetry new my_project
 % cd my_project
 ```
@@ -320,8 +320,8 @@ my_project/
 
 Now we tell Poetry to initialize our project:
 
-```
-poetry install
+```js
+% poetry install
 ```
 
 Think of **`poetry install`** as “set up my project environment.” This command:
@@ -343,7 +343,7 @@ Think of **`poetry install`** as “set up my project environment.” This comma
 
 Quick sanity check (runs Python inside Poetry’s environment in our project):
 
-```bash
+```js
 % poetry run python -V
 ```
 
@@ -401,7 +401,7 @@ one-off commands with **`poetry run`**.
 
 We will use Jupyter notebooks embedded in VS Code; this installs those dependencies in our project:
 
-```
+```js
 % poetry add --group dev ipykernel jupyter
 ```
 
@@ -409,7 +409,7 @@ We will use Jupyter notebooks embedded in VS Code; this installs those dependenc
 
 This seemingly simple installation command takes our project from an empty list of installed Python libraries (via `poetry show`) to something like this:
 
-```
+```js
 anyio                     4.10.0         High-level concurrency and network...
 appnope                   0.1.4          Disable App Nap on macOS >= 10.9
 argon2-cffi               25.1.0         Argon2 for Python
@@ -489,7 +489,7 @@ requests                  2.32.5         Python HTTP for Humans.
 rfc3339-validator         0.1.4          A pure python RFC3339 validator
 rfc3986-validator         0.1.1          Pure python rfc3986 validator
 rfc3987-syntax            1.1.0          Helper functions to syntactically ...
-rpds-py                   0.27.1         Python bindings to Rust's persiste...
+rpds-py                   0.27.1         Python bindings to Rust persistence...
 send2trash                1.8.3          Send file to trash natively under ...
 setuptools                80.9.0         Easily download, build, install, u...
 six                       1.17.0         Python 2 and 3 compatibility utili...
@@ -519,23 +519,25 @@ your GitHub account name.
 
 Back to your terminal session, be sure you are in your project's root folder:
 
-```
+```js
 % cd my_project
 ```
 
 Now initialize your local git repo:
 
-```
+```js
 % git init
 
 Initialized empty Git repository in <path-to-your-project>/.git/
 ```
 Next, we connect our local repo to our empty GitHub repo we created in the "First" step above:
-```
+
+```js
 % git remote add origin https://github.com/<your-GitHub-account-name>/Day-1.git
 ```
 Verify that this worked:
-```
+
+```js
 % git remote -v
 origin	https://github.com/<your-GitHub-account-name>/Day-1.git (fetch)
 origin	https://github.com/<your-GitHub-account-name>/Day-1.git (push)
@@ -543,7 +545,7 @@ origin	https://github.com/<your-GitHub-account-name>/Day-1.git (push)
 ```
 Now ask for the status of files in your local repo:
 
-```
+```js
 % git status
 On branch main
 
@@ -561,12 +563,13 @@ nothing added to commit but untracked files present (use "git add" to track)
 ```
 Tell git you want to add all the files (everything shown above) to the set files to be commited to the repo:
 
-```
+```js
 % git add .
 ```
 
 Confirm that status now:
-```
+
+```js
 % git status
 On branch main
 
@@ -574,16 +577,17 @@ No commits yet
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-	new file:   README.md                         # Text is now GREEN
-	new file:   poetry.lock                       # Text is now GREEN
-	new file:   pyproject.toml                    # Text is now GREEN
-	new file:   src/my_project/__init__.py        # Text is now GREEN
-	new file:   tests/__init__.py                 # Text is now GREEN
+	new file:   README.md                         # File names will now be GREEN
+	new file:   poetry.lock                       # File names will now be GREEN
+	new file:   pyproject.toml                    # File names will now be GREEN
+	new file:   src/my_project/__init__.py        # File names will now be GREEN
+	new file:   tests/__init__.py                 # File names will now be GREEN
 ```
+
 Now tell Git to save the current state of this project, and label it as the very first version with the commit 
 comment of "Initial commit.” 
 
-```
+```js
 % git commit -m "Initial commit"
 [main (root-commit) d16e626] Initial commit
  5 files changed, 2405 insertions(+)
@@ -594,7 +598,8 @@ comment of "Initial commit.”
  create mode 100644 tests/__init__.py
 ```
 Finally, send this "committed" state of our project to update our remote repo on GitHub:
-```
+
+```js
 % git push -u origin main
 Enumerating objects: 7, done.
 Counting objects: 100% (7/7), done.
@@ -616,7 +621,7 @@ You can now go back to your GitHub repo page (at https://github.com/your-GitHub-
 
 ### Step 4: Install Essential Packages (**NEEDS UPDATING**)
 
-```bash
+```js
 # Upgrade pip
 pip install --upgrade pip
 
