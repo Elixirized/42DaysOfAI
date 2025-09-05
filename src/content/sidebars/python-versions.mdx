@@ -1,0 +1,27 @@
+
+### Sidebar: **`python3 --version`** vs. **`poetry run python -V`**
+
+If you run both of these commands, you may notice differences reported, such as:
+
+**`poetry run python -V`**
+returns "Python 3.12.9" 
+
+ **`python3 --version`** 
+ returns "Python 3.13.3"
+
+#### What this means for your versions
+
+- Your current venv (virtual environment) shows 3.12.9 because that’s the interpreter Poetry 
+used when it created the venv.
+- Your system python3 is 3.13.3, which also satisfies >=3.12, but Poetry won’t switch 
+interpreters automatically.
+
+**If you want Poetry to use 3.13 (for example) now:**
+```
+poetry env use python3.13      # use the Python 3.13 interpreter
+poetry install                 # recreate/resolve for that interpreter
+poetry run python -V           # should now show 3.13.x
+```
+
+Note that the command **`poetry env use python3.13`** is causing Poetry to "tell" the project: 
+“from now on, use this interpreter when creating/running the virtual env.”
