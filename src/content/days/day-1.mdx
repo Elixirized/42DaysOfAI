@@ -119,21 +119,20 @@ Installing Python has different steps on MacOS and Windows machines, so we start
 ## Windows Setup
 
 ### Step 1: Install Python
-1. **Download Python:**
-   - Go to https://python.org/downloads/
-   - Download latest Python 3.x for Windows
-   - **Important:** Check "Add Python to PATH" during installation
+
+📌 Go to https://python.org/downloads/ <br/>
+📌 Download latest Python 3.x for Windows <br/>
+ **Important:** Check "Add Python to PATH" during installation
 
 
 ### Step 2: Install WSL
 
-📌 Run in PowerShell as Administrator
+📌 Run in PowerShell as Administrator:
 
 ```powershell
 % wsl --install
 ```
-📌 Restart computer when prompted
-
+📌 Restart computer when prompted <br/>
 📌 Create Ubuntu username and password
 
 ### Step 3: Update Ubuntu in WSL
@@ -184,7 +183,8 @@ Installing Python has different steps on MacOS and Windows machines, so we start
 - **python-dotenv**: Environment variable management
 - **Celery**: Task queue for background jobs
 
----
+### EDIT THIS FOR POETRY SYNTAX AND MOVE TO THAT AREA
+
 ```js
 # Upgrade pip first
 % pip install --upgrade pip
@@ -207,32 +207,6 @@ pip install pandas numpy matplotlib seaborn plotly
 # Save requirements
 % pip freeze > requirements.txt
 ```
-
-### Step 6 Install Essential Packages
-```js
-# Upgrade pip
-pip install --upgrade pip
-
-# Install Jupyter and essential libraries
-pip install jupyter jupyterlab
-
-# Install web development packages
-pip install flask django fastapi streamlit
-
-# Install data science packages
-pip install pandas numpy matplotlib seaborn plotly
-
-# Install database packages
-pip install sqlalchemy psycopg2-binary pymongo
-
-# Install additional utilities
-pip install requests beautifulsoup4 python-dotenv
-
-# Save requirements
-pip freeze > requirements.txt
-```
-
----
 
 ## Linux Setup
 
