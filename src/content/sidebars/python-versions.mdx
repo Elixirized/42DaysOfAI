@@ -12,14 +12,13 @@ returns "Python 3.12.9"
 #### What this means for your versions
 
 - Your current venv (virtual environment) shows 3.12.9 because that’s the interpreter Poetry 
-used when it created the venv.
-- Your system python3 is 3.13.3, which also satisfies >=3.12, but Poetry won’t switch 
-interpreters automatically.
+used (in this example) when it created our project.
+- Your system python3 is 3.13.3, which also satisfies the `>=3.12` in `pyproject.toml`, but 
+Poetry won’t switch Python versions automatically.
 
 **If you want Poetry to use 3.13 (for example) now:**
-```
+```js
 poetry env use python3.13      # use the Python 3.13 interpreter
-poetry install                 # recreate/resolve for that interpreter
 poetry run python -V           # should now show 3.13.x
 ```
 

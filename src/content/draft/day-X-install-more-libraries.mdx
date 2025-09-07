@@ -1,0 +1,57 @@
+---
+title: "Install additional Python libraries"
+description: "Our content moved from Day 1 ... let's add this to a later day when it makes sense.
+"
+---
+
+## Additional Essential Libraries
+
+### Core Web Frameworks
+- **Flask**: Lightweight, flexible web framework
+- **Django**: Full-featured web framework with admin interface
+- **FastAPI**: Modern, fast API framework with automatic documentation
+- **Streamlit**: Rapid web app development for data science
+
+### Data Handling
+- **Pandas**: Data manipulation and analysis
+- **NumPy**: Numerical computing
+- **SQLAlchemy**: Database ORM
+- **psycopg2**: PostgreSQL adapter
+- **pymongo**: MongoDB driver
+
+### Visualization
+- **Matplotlib**: Basic plotting
+- **Seaborn**: Statistical visualization
+- **Plotly**: Interactive visualizations
+- **Bokeh**: Interactive web visualizations
+
+### Utilities
+- **Requests**: HTTP library
+- **BeautifulSoup4**: Web scraping
+- **python-dotenv**: Environment variable management
+- **Celery**: Task queue for background jobs
+
+### EDIT THIS FOR POETRY SYNTAX AND MOVE TO THAT AREA
+
+```js
+# Upgrade pip first
+% pip install --upgrade pip
+
+# Install Jupyter and essential libraries
+% pip install jupyter jupyterlab
+
+# Install web development packages
+% pip install flask django fastapi streamlit
+
+# Install data science packages
+pip install pandas numpy matplotlib seaborn plotly
+
+# Install database packages
+% pip install sqlalchemy psycopg2-binary pymongo
+
+# Install additional utilities
+% pip install requests beautifulsoup4 python-dotenv
+
+# Save requirements
+% pip freeze > requirements.txt
+```

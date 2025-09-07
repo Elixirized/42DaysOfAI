@@ -17,16 +17,15 @@ import Conventions from '../sidebars/doc-conventions.mdx';
 import PythonVersions from '../sidebars/python-versions.mdx';
 import SidebarCapstone from '../sidebars/capstone.mdx';
 
-# Day 1: Dev Environment Setup
+# {frontmatter.title}
+
 This is the first day of our 42 Days of AI course, where we will set up our development environment for building business web applications using Python. We will install Visual Studio Code (VSCode), configure essential extensions, and set up a virtual environment. We will also explore the Jupyter notebook interface within VSCode and create a simple web application.
 
 ## Table of Contents
 1. [Install VSCode](#install-vscode) 
-2. [macOS Setup](#macos-setup)
-3. [Windows Setup](#windows-setup)
-4. [Linux Setup](#linux-setup)
-5. [Essential Libraries](#essential-libraries)
-6. [Create your "Day-1" project](#creating-your-project)
+2. [Install Python](#install-python) 
+3. [Install Poetry](#install-poetry) 
+4. [Create your "Day-1" project](#create-your-project)
 
 ---
 <div style="display: flex; gap:1rem; margin:2rem 0;">
@@ -46,7 +45,9 @@ commands and features by typing their names. It's like a shortcut hub for all th
 within the editor.
 To open the Command Palette, you can use the keyboard shortcut:
 
-<img src="/images/cmd+shift+p.png" alt="Three keyboard keys arranged horizontally: cmd with the command symbol, shift with an upward arrow, and P in bold. Plus signs connect the keys, illustrating the keyboard shortcut for opening the Command Palette." />
+<img src="/images/cmd+shift+p.png" width="300" alt="Three keyboard keys arranged horizontally: 
+cmd with the command symbol, shift with an upward arrow, and P in bold. Plus signs connect the 
+keys, illustrating the keyboard shortcut for opening the Command Palette." />
 
   
 To open it, press Cmd+Shift+P **(or Ctrl+Shift+P on Windows/Linux)**, and start typing your command. It's
@@ -55,8 +56,10 @@ navigating through menus or remembering keyboard shortcuts.
 
 <img src="/images/command-palette.png" alt="Screenshot of Command Palette in VSCode" />
 
+<br/>
+<br/>
 
-# Install VSCode Extensions 
+## Install VSCode Extensions 
 
 To make the most of your Python development experience in VSCode, you'll want to install some essential extensions. Here are a few key extensions that will enhance your workflow:
 
@@ -87,11 +90,14 @@ There are many more extensions available in the **VSCode** marketplace, but thes
 
 # Install Python
 
-Installing Python has different steps on MacOS and Windows machines, so we start with those initial steps for each platform.
+Installing Python has different steps on MacOS, Windows and Linux machines, so we start with those 
+initial steps for each platform.
+
+[macOS Setup](#macos-setup) • [Windows Setup](#windows-setup) • [Linux Setup](#linux-setup)
 
 ## macOS Setup
 
-### Step 1: Install Homebrew (Package Manager)
+### FIRST: Install Homebrew (Package Manager)
 ```powershell
 # Install Homebrew
 % /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -104,7 +110,7 @@ Installing Python has different steps on MacOS and Windows machines, so we start
 % brew --version
 ```
 
-### Step 2: Install Python
+### THEN: Install Python
 ```powershell
 # Install latest Python
 % brew install python
@@ -114,18 +120,16 @@ Installing Python has different steps on MacOS and Windows machines, so we start
 % pip3 --version
 ```
 
----
-
+<br/><br/>
 ## Windows Setup
 
-### Step 1: Install Python
+### Step 3: Install Python
 
 📌 Go to https://python.org/downloads/ <br/>
 📌 Download latest Python 3.x for Windows <br/>
  **Important:** Check "Add Python to PATH" during installation
 
-
-### Step 2: Install WSL
+### Step 3: Install WSL
 
 📌 Run in PowerShell as Administrator:
 
@@ -153,61 +157,7 @@ Installing Python has different steps on MacOS and Windows machines, so we start
 % python3 --version
 % pip3 --version
 ```
-
-### Step 5: Install Essential Packages
-
-## Essential Libraries
-
-### Core Web Frameworks
-- **Flask**: Lightweight, flexible web framework
-- **Django**: Full-featured web framework with admin interface
-- **FastAPI**: Modern, fast API framework with automatic documentation
-- **Streamlit**: Rapid web app development for data science
-
-### Data Handling
-- **Pandas**: Data manipulation and analysis
-- **NumPy**: Numerical computing
-- **SQLAlchemy**: Database ORM
-- **psycopg2**: PostgreSQL adapter
-- **pymongo**: MongoDB driver
-
-### Visualization
-- **Matplotlib**: Basic plotting
-- **Seaborn**: Statistical visualization
-- **Plotly**: Interactive visualizations
-- **Bokeh**: Interactive web visualizations
-
-### Utilities
-- **Requests**: HTTP library
-- **BeautifulSoup4**: Web scraping
-- **python-dotenv**: Environment variable management
-- **Celery**: Task queue for background jobs
-
-### EDIT THIS FOR POETRY SYNTAX AND MOVE TO THAT AREA
-
-```js
-# Upgrade pip first
-% pip install --upgrade pip
-
-# Install Jupyter and essential libraries
-% pip install jupyter jupyterlab
-
-# Install web development packages
-% pip install flask django fastapi streamlit
-
-# Install data science packages
-pip install pandas numpy matplotlib seaborn plotly
-
-# Install database packages
-% pip install sqlalchemy psycopg2-binary pymongo
-
-# Install additional utilities
-% pip install requests beautifulsoup4 python-dotenv
-
-# Save requirements
-% pip freeze > requirements.txt
-```
-
+<br/><br/>
 ## Linux Setup
 
 ### Step 1: Update System
@@ -229,23 +179,19 @@ pip install pandas numpy matplotlib seaborn plotly
 % sudo dnf install -y python3 python3-pip python3-devel gcc gcc-c++ make
 ```
 
-## Creating Your Project
+# Install Poetry
 
 We use [Poetry](https://python-poetry.org) for Python dependency and project organization/management.
 
-## 📦 First: Install Poetry
-
-Follow these steps to install Poetry and create/manage Python projects; they should be identical
- on **Windows, macOS, and Linux**:
-
-### 1. Install Poetry
+Follow these steps to install Poetry and create/manage Python projects; these are universal instructions 
+for **Windows, macOS, and Linux**:
 
 Run this in your terminal (PowerShell on Windows, Terminal on macOS/Linux):
 
 ```js
 % curl -sSL https://install.python-poetry.org | python3 -
 ```
-
+<br/>
 ### 2. Add Poetry to your PATH (if not already)
 
 If `poetry` is not found after install, add it to your PATH:
@@ -272,16 +218,22 @@ Then restart your terminal.
 
 You should see the installed version number.
 
----
-## NEXT: 📦 Create Your Project
+# Create Your Project
 
-### 1. Create/Initialize Syntax
+Getting a development environment configured can be frustrating--especially for people who 
+are new to a team, and especially for newer programmers. Hopefully the previous steps were a pain-free 
+experience for you. 
+
+So let's finally **build something!!**.
+
+<br/>
+## 1. Create/Initialize Syntax
 
 ```js
 % poetry new my_project
 % cd my_project
 ```
-This generates a standard project structure:
+This generates a standard Python/Poetry project structure for (in this case) the project called "my_project":
 
 ```
 my_project/
@@ -311,11 +263,11 @@ Think of **`poetry install`** as “set up my project environment.” This comma
 - If `poetry.lock` doesn’t exist → this resolves versions, installs them, and generates our lockfile (`poetry.lock`).
 
 📌 Typical use cases:
-- First time you create (or clone -- like cloning a remote repo) a project → **`poetry install`** to get a working virtual environment ("venv").
+- The first time you create (or clone -- like cloning a remote repo) a project → **`poetry install`** to get a working virtual environment ("venv").
 - Any time dependencies change in `pyproject.toml` or `poetry.lock` and you want those dependencies updated.
 
-
-### 2. Configure Your Python Version (if needed)
+<br/>
+## 2. Configure Your Python Version (if needed)
 
 Quick sanity check (runs Python inside Poetry’s environment in our project):
 
@@ -323,7 +275,7 @@ Quick sanity check (runs Python inside Poetry’s environment in our project):
 % poetry run python -V
 ```
 
-Inside `pyproject.toml`, Poetry will already have guessed a Python constraint. You can edit it:
+Inside `pyproject.toml`, Poetry will configured a default Python constraint. You can edit it:
 
 ```toml
 [project]
@@ -336,7 +288,8 @@ requires-python = ">=3.12"
   </Sidebar>
 </div>
 
-### 3. Activating our Virtual Environment
+<br/>
+## 3. Activating the Virtual Environment
 
 A core principle in the Python world is to isolate dependencies so that a package or library used 
 by one Python project doesn't affect another Python project. This is a key 
@@ -346,34 +299,18 @@ multiple projects, you will appreciate the refreshing lack of that issue with Py
 follow the convention of "virtual environments" which enable this dependency isolation.
 
 Unlike other Python package managers (like `pip`, the default package manager for Python), Poetry 
-automatically manages virtual environments for each project, and we illustrated **creating** the virtual 
+manages virtual environments for each project, and we illustrated **creating** the virtual 
 environment with the **`poetry install`** command above. 
 
-👉 You _activate_ the virtual environment with **`poetry shell`** (**WRONG!! DEPRECATED!!**) or run 
-one-off commands with **`poetry run`**.
+👉 You _activate_ the virtual environment in MacOS and Linux with **`eval $(poetry env activate).`** 
+In Windows Powershell the syntax is **`Invoke-Expression (poetry env activate).`** In both cases, your 
+terminal command prompt changes to let you know the virtual environment is activate. In my case:
+```js 
+(my-project-py3.13) %
+```
 
-### ⚖️ `poetry run` vs `poetry shell` (**WRONG!! DEPRECATED!!**)
-
-| Command                | What it does                                                                       | When to use it                                                                                                         | Pros                                                                                                                | Cons                                                                              |
-| ---------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| **`poetry run <cmd>`** | Runs a single command inside the Poetry virtual environment (without entering it). | - Scripts & automation<br/>- CI/CD pipelines<br/>- One-off commands (`poetry run pytest`, `poetry run python script.py`) | ✅ No need to enter/exit a subshell<br/>✅ Reproducible (works in scripts)<br/>✅ Great for automation                   | ❌ Verbose (you must prefix each command)<br/>❌ Less convenient for interactive dev |
-| **`poetry shell`**     | (**WRONG!! DEPRECATED!!**)                                                         | - Day-to-day dev work<br/>- When running multiple commands (`python`, `pytest`, `ipython`, etc.)                        | ✅ Natural workflow (`python`, `pytest` just work)<br/>✅ Good for interactive debugging<br/>✅ Prompt shows active venv | ❌ You must remember to `exit` when done<br/>❌ Not ideal for scripts or automation  |
-
----
-
-### 🟢 Best Practice
-
-* **Developing interactively** → `poetry shell`
-* **Running one-off commands or in scripts/CI** → `poetry run <cmd>`
-
-👉 Think of it like:
-
-* `poetry run` = **“just run this thing inside the venv.”**
-* **`poetry shell`** = **“drop me into the venv until I’m done.”**
-
-✅ We will usually be developing interactively, so **`poetry shell`** will be our convention.
-
-### 4. Add Dependencies
+<br/>
+## 4. Add Dependencies
 
 We will use Jupyter notebooks embedded in VS Code; this installs those dependencies in our project:
 
@@ -381,9 +318,35 @@ We will use Jupyter notebooks embedded in VS Code; this installs those dependenc
 % poetry add --group dev ipykernel jupyter
 ```
 
-- The `--group dev` flag specifies (in our pyproject.toml file) that these are Development-only dependencies.
+- The `--group dev` flag specifies (in our `pyproject.toml` file) that these are Development-only dependencies.
 
-This seemingly simple installation command takes our project from an empty list of installed Python libraries (via `poetry show`) to something like this:
+Here is our `pyproject.toml` file now:
+```js 
+[project]
+name = "my-project"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "42DaysOfAI Team",email = "agentic.dudes@42daysofAI.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "my_project", from = "src"}]
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.30.1"
+jupyter = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+```
+
+This seemingly simple installation command takes our project from an empty list of installed Python libraries (via **`poetry show`**) to something like this:
 
 ```js
 anyio                     4.10.0         High-level concurrency and network...
@@ -487,11 +450,12 @@ websocket-client          1.8.0          WebSocket client for Python with l...
 widgetsnbextension        4.0.14         Jupyter interactive widgets for Ju...
 ```
 
-### 5. Initialize Git (Sooner, rather than later)
+<br/><br/>
+## 5. Initialize Git
 
-First: Go create and **empty** repo in your GitHub account. In this example we are using the 
+First: Go create an **empty** repo in your GitHub (or GitLab) account. In this example we are using the 
 empty repo named "Day-1" in the 42DaysOfAI GitHub organization. Your "Day-1" repo will be under 
-your GitHub account name.
+your GitHub/GitLab account name.
 
 Back to your terminal session, be sure you are in your project's root folder:
 
@@ -592,33 +556,6 @@ You can now go back to your GitHub repo page (at https://github.com/your-GitHub-
 
 <img src="/images/GitHubDay-1Repo.png" alt="Our GitHub Repo" width="800" height="500" />
 
-
----
-
-### Step 4: Install Essential Packages (**NEEDS UPDATING**)
-
-```js
-# Upgrade pip
-pip install --upgrade pip
-
-# Install Jupyter and essential libraries
-pip install jupyter jupyterlab
-
-# Install web development packages
-pip install flask django fastapi streamlit
-
-# Install data science packages
-pip install pandas numpy matplotlib seaborn plotly
-
-# Install database packages
-pip install sqlalchemy psycopg2-binary pymongo
-
-# Install additional utilities
-pip install requests beautifulsoup4 python-dotenv
-
-# Save requirements
-pip freeze > requirements.txt
-```
 
 ## Day 1 Recap
 
