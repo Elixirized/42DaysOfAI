@@ -4,8 +4,9 @@ description: |
   • VSCode configuration for Python 
   • Essential VSCode extensions
   • Essential Python and AI-focused libraries
-  • Introduction to Jupyter notebooks and embedding that into VSCode 
-  • SIDEBAR: Preview of the Capstone project
+  • Initializing your local git repo and connecting to your GitHub project
+  • Jupyter notebook embedded in VS Code
+  • Preview of the Capstone project
   • NOTE: Even if you are an experienced developer, you will benefit from the VSCode and AI libraries details
   • RESOURCES: References to dive deeper on today's topics/tools.
 
@@ -563,13 +564,36 @@ branch 'main' set up to track 'origin/main'.
 
 You can now go back to your GitHub repo page (at https://github.com/your-GitHub-account-name/Day-1, using this example) and refresh your browser. You will see somethig like this:
 
-<img src="/images/GitHubDay-1Repo.png" alt="Our GitHub Repo" width="800" height="500" />
+<img src="/images/GitHubDay-1Repo.png" alt="Our GitHub Repo" height="700" />
+
+<br/><br/>
+## 5. Jupyter Embedded in VS Code
+
+That command we executed above (`poetry add --group dev ipykernel jupyter`) installed Jupyter 
+and its Python engine (ipykernel) so we can run Jupyter notebooks or send code to Jupyter from VS Code 
+("embedded Jupyter"--our use case in this series).
+
+What that means for us in VS Code is that we can preview the execution results of our code (even 
+individual lines of code) directly in that VS Code session; we don't need to open up a separate 
+Jupyter notebook.
+
+Here is what that looks like:
+
+<img src="/images/Interactive_Jupyter_VS_Code.png" alt="Embedded Jupyter"  height="700" />
+
+To get to this view, I put my cursor over line 4, then pressed `SHIFT-ENTER`. The first time I did that, 
+it launched that "Interactive" tab on the right, then executed that `print ("Hello World!")` code as
+shown. 
+
+> This "embedded Jupyter" tool can be an incredible accelerator to producing working (correct) code, 
+because you can validate each line of code (or chunks of code) while it is fresh in your mind. The more 
+you use it, the more thrilled you will likely be with how much faster you can produce working software.
 
 
-## Day 1 Recap
+# Day 1 Recap
 
 Today, we set up our development environment for building business web applications using Python. 
-We installed VSCode, configured essential extensions, and set up a virtual environment. 
+We installed VS Code, configured essential extensions, and set up a virtual environment. 
 We also explored the Jupyter notebook interface and created a simple web application, as well 
 as installed essential libraries for data handling, visualization, and web development.
 
